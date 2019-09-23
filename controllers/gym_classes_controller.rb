@@ -3,7 +3,39 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/GymClass.rb' )
 also_reload( '../models/*' )
 
-get '/classes' do
-  @classes = GymClass.all()
-  erb(:classes)
+get '/gym_classes' do
+  @gym_classes = GymClass.all()
+  erb(:'gym_classes/index')
+end
+
+get '/gym_classes/new' do
+  erb(:'gym_classes/new')
+end
+
+get '/gym_classes/:id' do
+  @gym_class = GymClass.find(params[:id])
+  erb(:'gym_classes/show')
+end
+
+post '/gym_classes' do
+  @gym_class = GymClass.new(params)
+  @gym_class.save()
+  erb(:'gym_classes/create')
+end
+
+get '/gym_classes/:id/edit' do
+  @gym_class = GymClass.find(params[:id])
+  erb(:'gym_classes/edit')
+end
+
+post '/gym_classes/:id' do
+  @gym_class = GymClass.new(params)
+  @gym_class.update()
+  erb(:'gym_classes/update')
+end
+
+post '/gym_classes/:id/delete' do
+  @gym_class = GymClass.find(params[:id])
+  @gym_class.delete()
+  erb(:'gym_classes/delete')
 end
