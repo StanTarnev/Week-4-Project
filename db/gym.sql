@@ -6,13 +6,13 @@ CREATE TABLE gym_classes(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
   capacity INT4,
-  time_slot varchar(255)
+  time_slot VARCHAR(255)
 );
 
 CREATE TABLE members(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  membership_type VARCHAR(255)
+  premium_membership BOOLEAN
 );
 
 CREATE TABLE bookings(

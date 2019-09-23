@@ -51,48 +51,48 @@ gym_class5.save()
 gym_class6.save()
 
 member1 = Member.new({
-  'name' => 'Alejandra Monroe', 
-  'membership-type' => 'Basic'
+  'name' => 'Alejandra Monroe',
+  'premium_membership' => false
   })
 
 member2 = Member.new({
   'name' => 'Jack Scannuzzi',
-  'membership-type' => 'Premium'
+  'premium_membership' => true
   })
 
 member3 = Member.new({
   'name' => 'Dolores Nguen',
-  'membership-type' => 'Basic'
+  'premium_membership' => false
   })
 
 member4 = Member.new({
   'name' => 'Ivana Gustavsson',
-  'membership-type' => 'Premium'
+  'premium_membership' => true
   })
 
 member5 = Member.new({
   'name' => 'Yiao Sanchez',
-  'membership-type' => 'Basic'
+  'premium_membership' => false
   })
 
 member6 = Member.new({
   'name' => 'Shaqeel Petrov',
-  'membership-type' => 'Premium'
+  'premium_membership' => true
   })
 
 member7 = Member.new({
   'name' => 'Hassan Hoffmann',
-  'membership-type' => 'Basic'
+  'premium_membership' => false
   })
 
 member8 = Member.new({
   'name' => 'Monique Nasarewa',
-  'membership-type' => 'Premium'
+  'premium_membership' => true
   })
 
 member9 = Member.new({
   'name' => 'Dwight Schrute',
-  'membership-type' => 'Basic'
+  'premium_membership' => false
   })
 
 member1.save()
