@@ -14,7 +14,7 @@ class Booking
   def save()
     sql = "INSERT INTO bookings (gym_class_id, member_id) VALUES ($1, $2) RETURNING id"
     values = [@gym_class_id, @member_id]
-    booking = SqlRunner.run(sql, values)[0];
+    booking = SqlRunner.run(sql, values).first;
     @id = booking['id'].to_i
   end
 
