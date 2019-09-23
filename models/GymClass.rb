@@ -35,13 +35,13 @@ class GymClass
     sql = "SELECT members.* FROM members INNER JOIN bookings ON members.id = bookings.member_id WHERE gym_class_id = $1"
     values = [@id]
     members = SqlRunner.run(sql, values)
-    return Member.map {|member| Member.new(member)}
+    return members.map {|member| Member.new(member)}
   end
 
   # def premium_membership_check(member)
   #   return member.membership_type == 'Premium'
   # end
-  
+
   # def premium_time_slot_check()
   #   return @time_slot == '7-8am' | @time_slot == '8-9am' | @time_slot == '5-6pm' | @time_slot == '6-7pm' | @time_slot == '8-9pm'
   # end
@@ -53,7 +53,7 @@ class GymClass
   def self.all()
     sql = "SELECT * FROM gym_classes"
     gym_classes = SqlRunner.run(sql)
-    return GymClass.map {|gym_class| GymClass.new(gym_class)}
+    return gym_classes.map {|gym_class| GymClass.new(gym_class)}
   end
 
   def self.delete_all()

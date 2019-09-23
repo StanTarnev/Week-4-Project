@@ -43,13 +43,13 @@ class Member
           WHERE member_id = $1"
     values = [@id]
     gym_classes = SqlRunner.run(sql, values)
-    return GymClass.map {|gym_class| GymClass.new(gym_class)}
+    return gym_classes.map {|gym_class| GymClass.new(gym_class)}
   end
 
   def self.all()
     sql = "SELECT * FROM members"
     members = SqlRunner.run(sql)
-    return Member.map {|member| Member.new(member)}
+    return members.map {|member| Member.new(member)}
   end
 
   def self.delete_all()
