@@ -12,32 +12,41 @@ class Member
   end
 
   def save()
-    sql = "INSERT INTO members (name, membership_type) VALUES ($1, $2) RETURNING id"
+    sql = "INSERT INTO members (name, membership_type)
+          VALUES ($1, $2)
+          RETURNING id"
     values = [@name, @membership_type]
     member = SqlRunner.run(sql, values).first
     @id = member['id'].to_i
   end
 
   def update()
-    sql = "UPDATE members SET (name, membership_type) = ($1, $2) WHERE id = $3"
+    sql = "UPDATE members
+          SET (name, membership_type) = ($1, $2)
+          WHERE id = $3"
     values = [@name, @membership_type, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
-    sql = "DELETE FROM members where id = $1"
+    sql = "DELETE FROM members
+          WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def gym_classes()
-    sql = "SELECT gym_classes.* FROM gym_classes INNER JOIN bookings ON gym_classes.id = bookings.gym_class_id WHERE member_id = $1"
+    sql = "SELECT gym_classes.*
+          FROM gym_classes
+          INNER JOIN bookings
+          ON gym_classes.id = bookings.gym_class_id
+          WHERE member_id = $1"
     values = [@id]
     gym_classes = SqlRunner.run(sql, values)
     return GymClass.map {|gym_class| GymClass.new(gym_class)}
   end
 
-  self.all()
+  def self.all()
     sql = "SELECT * FROM members"
     members = SqlRunner.run(sql)
     return Member.map {|member| Member.new(member)}
@@ -49,12 +58,12 @@ class Member
   end
 
   def self.find(id)
-  sql = "SELECT *
-        FROM members
-        WHERE id = $1"
-  values = [id]
-  members = SqlRunner.run(sql, values)
-  return GymClass.new(members.first())
-end
+    sql = "SELECT *
+          FROM members
+          WHERE id = $1"
+    values = [id]
+    members = SqlRunner.run(sql, values)
+    return GymClass.new(members.first())
+  end
 
 end

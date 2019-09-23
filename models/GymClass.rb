@@ -15,7 +15,7 @@ class GymClass
   def save()
     sql = "INSERT INTO gym_classes (name, capacity, time_slot) VALUES ($1, $2, $3) RETURNING id"
     values = [@name, @capacity, @time_slot]
-    gym_class = SqlRunner.run(sql, values).first
+    gym_class = SqlRunner.run(sql, values).first()
     @id = gym_class['id'].to_i
   end
 
@@ -38,7 +38,7 @@ class GymClass
     return Member.map {|member| Member.new(member)}
   end
 
-  self.all()
+  def self.all()
     sql = "SELECT * FROM gym_classes"
     gym_classes = SqlRunner.run(sql)
     return GymClass.map {|gym_class| GymClass.new(gym_class)}

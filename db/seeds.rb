@@ -1,97 +1,97 @@
-require_relative( "../models/member.rb" )
-require_relative( "../models/gym_class.rb" )
-require_relative( "../models/booking.rb" )
+require_relative( "../models/Member.rb" )
+require_relative( "../models/GymClass.rb" )
+require_relative( "../models/Booking.rb" )
 require("pry-byebug")
 
 Booking.delete_all()
 Member.delete_all()
 GymClass.delete_all()
 
-gym_class1 = ({
-  'name' => 'Spinning'
+gym_class1 = GymClass.new({
+  'name' => 'Spinning',
   'capacity' => 4,
   'time_slot' => '5-6pm'
   })
 
-gym_class2 = ({
-  'name' => 'Boot Camp'
+gym_class2 = GymClass.new({
+  'name' => 'Boot Camp',
   'capacity' => 5,
   'time_slot' => '6-7pm'
   })
 
-gym_class3 = ({
-  'name' => 'Zumba'
+gym_class3 = GymClass.new({
+  'name' => 'Zumba',
   'capacity' => 6,
   'time_slot' => '10-11am'
   })
 
-gym_class4 = ({
-  'name' => 'Cross Fit'
+gym_class4 = GymClass.new({
+  'name' => 'Cross Fit',
   'capacity' => 3,
   'time_slot' => '7-8pm'
   })
 
-gym_class5 = ({
-  'name' => 'Pilates'
+gym_class5 = GymClass.new({
+  'name' => 'Pilates',
   'capacity' => 7,
   'time_slot' => '11-12am'
   })
 
-gym_class6 = ({
-  'name' => 'Hatha Yoga'
+gym_class6 = GymClass.new({
+  'name' => 'Hatha Yoga',
   'capacity' => 4,
   'time_slot' => '9-10am'
   })
 
-gym-gym_class1.save()
-gym-gym_class2.save()
-gym-gym_class3.save()
-gym-gym_class4.save()
-gym-gym_class5.save()
-gym-gym_class6.save()
+gym_class1.save()
+gym_class2.save()
+gym_class3.save()
+gym_class4.save()
+gym_class5.save()
+gym_class6.save()
 
-member1 = ({
-  'name' => 'Jack Scannuzzi'
-  'membership-type' => 'Premium'
-  })
-
-member2 = ({
-  'name' => 'Jack Scannuzzi'
-  'membership-type' => 'Premium'
-  })
-
-member3 = ({
-  'name' => 'Dolores Nguen'
+member1 = Member.new({
+  'name' => 'Alejandra Monroe', 
   'membership-type' => 'Basic'
   })
 
-member4 = ({
-  'name' => 'Ivana Gustavsson'
+member2 = Member.new({
+  'name' => 'Jack Scannuzzi',
   'membership-type' => 'Premium'
   })
 
-member5 = ({
-  'name' => 'Yiao Sanchez'
+member3 = Member.new({
+  'name' => 'Dolores Nguen',
   'membership-type' => 'Basic'
   })
 
-member6 = ({
-  'name' => 'Shaqeel Petrov'
+member4 = Member.new({
+  'name' => 'Ivana Gustavsson',
   'membership-type' => 'Premium'
   })
 
-member7 = ({
-  'name' => 'Hassan Hoffmann'
+member5 = Member.new({
+  'name' => 'Yiao Sanchez',
   'membership-type' => 'Basic'
   })
 
-member8 = ({
-  'name' => 'Monique Nasarewa'
+member6 = Member.new({
+  'name' => 'Shaqeel Petrov',
   'membership-type' => 'Premium'
   })
 
-member9 = ({
-  'name' => 'Dwight Schrute'
+member7 = Member.new({
+  'name' => 'Hassan Hoffmann',
+  'membership-type' => 'Basic'
+  })
+
+member8 = Member.new({
+  'name' => 'Monique Nasarewa',
+  'membership-type' => 'Premium'
+  })
+
+member9 = Member.new({
+  'name' => 'Dwight Schrute',
   'membership-type' => 'Basic'
   })
 
@@ -105,50 +105,60 @@ member7.save()
 member8.save()
 member9.save()
 
-booking1 ({
-  'gym_class_id' => gym_class1.id
+booking1 = Booking.new({
+  'gym_class_id' => gym_class1.id,
   'member_id' => member1.id
   })
 
-booking2 ({
-  'gym_class_id' => gym_class2.id
+booking2 = Booking.new({
+  'gym_class_id' => gym_class2.id,
   'member_id' => member3.id
   })
 
-booking3 ({
-  'gym_class_id' => gym_class4.id
+booking3 = Booking.new({
+  'gym_class_id' => gym_class4.id,
   'member_id' => member5.id
   })
 
-booking4 ({
-  'gym_class_id' => gym_class6.id
+booking4 = Booking.new({
+  'gym_class_id' => gym_class6.id,
   'member_id' => member7.id
   })
 
-booking5 ({
-  'gym_class_id' => gym_class1.id
+booking5 = Booking.new({
+  'gym_class_id' => gym_class1.id,
   'member_id' => member8.id
   })
 
-booking6 ({
-  'gym_class_id' => gym_class2.id
+booking6 = Booking.new({
+  'gym_class_id' => gym_class2.id,
   'member_id' => member9.id
   })
 
-booking7 ({
-  'gym_class_id' => gym_class3.id
+booking7 = Booking.new({
+  'gym_class_id' => gym_class3.id,
   'member_id' => member1.id
   })
 
-booking8 ({
-  'gym_class_id' => gym_class4.id
+booking8 = Booking.new({
+  'gym_class_id' => gym_class4.id,
   'member_id' => member2.id
   })
 
-booking9 ({
-  'gym_class_id' => gym_class5.id
+booking9 = Booking.new({
+  'gym_class_id' => gym_class5.id,
   'member_id' => member3.id
   })
+
+booking1.save()
+booking2.save()
+booking3.save()
+booking4.save()
+booking5.save()
+booking6.save()
+booking7.save()
+booking8.save()
+booking9.save()
 
 binding.pry
 nil
