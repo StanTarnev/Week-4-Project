@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>PowerUp</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
-  </head>
-  <body>
-    <h1>PowerUp!</h1>
-    <nav>
-      <p>
-        <a href="/"> Home </a>
-      </p>
+<head>
+  <meta charset="utf-8">
+  <title>PowerUp</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <img src="../public/images/PowerUp_Logo.png" alt="PowerUp Logo Text">
+  <h1>PowerUp!</h1>
+  <hr/>
+  <nav>
+    <!-- <p> -->
+      <a href="/"> <button>Home </button></a>&nbsp&nbsp&nbsp
+    <!-- </p> -->
 
-      <p>
-        <a href="/gym_classes"> Manage Gym Classes</a>
-      </p>
-      <p>
-        <a href="/members"> Manage Members</a>
-      </p>
-      <p>
-        <a href="/bookings"> Manage Bookings</a>
-      </p>
-    </nav>
-    <hr/>
+    <!-- <p> -->
+      <a href="/gym_classes"> <button>Manage Gym Classes</button></a>&nbsp&nbsp&nbsp
+    <!-- </p>
+    <p> -->
+      <a href="/members"> <button>Manage Members</button></a>&nbsp&nbsp&nbsp
+    <!-- </p>
+    <p> -->
+      <a href="/bookings"><button>Manage Bookings</button></a>
+    <!-- </p> -->
+  </nav>
+  <hr/>
 
-<%= yield %>
+  <%= yield %>
 
-  </body>
+</body>
 </html>
