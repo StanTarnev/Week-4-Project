@@ -62,12 +62,12 @@ class GymClass
   end
 
   def self.find(id)
-  sql = "SELECT *
-        FROM gym_classes
-        WHERE id = $1"
-  values = [id]
-  gym_classes = SqlRunner.run(sql, values)
-  return GymClass.new(gym_classes.first())
-end
+    sql = "SELECT *
+    FROM gym_classes
+    WHERE id = $1"
+    values = [id]
+    gym_classes = SqlRunner.run(sql, values)
+    return GymClass.new(gym_classes.first())
+  end
 
 end

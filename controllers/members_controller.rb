@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/Member.rb' )
 also_reload( '../models/*' )
+require('pry')
 
 get '/members' do
   @members = Member.all()
@@ -28,7 +29,10 @@ get '/members/:id/edit' do
   erb(:'members/edit')
 end
 
-post 'members/:id' do
+post '/members/:id' do
+  if !params['premium_membership']
+    params['premium_membership'] = false
+  end
   @member = Member.new(params)
   @member.update()
   erb(:'members/update')

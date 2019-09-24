@@ -1,0 +1,16 @@
+<% @bookings.each do |booking| %>
+<p> <%= booking.member.name %> - <%= booking.gym_class.name %> <a href='/bookings/<%=booking.id%>'><button>More Info</button></a></p>
+
+<% end %>
+
+<a href="/bookings/new">
+  <button>Add Booking</button>
+</a>&nbsp&nbsp&nbsp
+
+<a href="/bookings/:id/edit">
+  <button>Edit Booking</button>
+</a>&nbsp&nbsp&nbsp
+
+<a href="/bookings/:id/delete">
+  <button>Delete Booking</button>
+</a>&nbsp&nbsp&nbsp

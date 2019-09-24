@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/GymClass.rb' )
 also_reload( '../models/*' )
+require('pry')
 
 get '/gym_classes' do
   @gym_classes = GymClass.all()

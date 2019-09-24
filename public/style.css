@@ -1,5 +1,5 @@
 .index-image{
-  width: 1000px;
+  width: 100vw;
 }
 
 /* nav {
@@ -18,3 +18,7 @@ font-size: 20px;
 margin: 4px 2px;
 cursor: pointer;
 } */
+
+img {
+  width: 100vw;
+}

@@ -1,0 +1,13 @@
+<p>Name: <%= @gym_class.name %></p>
+<p>Capacity: <%= @gym_class.capacity %></p>
+<p>Time Slot: <%= @gym_class.time_slot %></p>
+
+<hr/>
+
+<a href="/gym_classes/<%=@gym_class.id%>/edit">
+  <button>Edit Gym Class</button>
+</a>
+
+<form method="post" action="/gym_classes/<%=@gym_class.id%>/delete">
+  <input type="submit" value="Delete Gym Class"/>
+  </form>

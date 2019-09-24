@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require_relative('../helpers/sql_helper.rb')
 
 class Member
 
@@ -8,7 +9,7 @@ class Member
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @premium_membership = options['premium_membership']
+    @premium_membership = SqlHelper.get_bool(options['premium_membership'])
   end
 
   def save()
@@ -63,7 +64,7 @@ class Member
           WHERE id = $1"
     values = [id]
     members = SqlRunner.run(sql, values)
-    return GymClass.new(members.first())
+    return Member.new(members.first())
   end
 
 end

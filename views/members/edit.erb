@@ -4,7 +4,7 @@
   <input id="name" type="text" name="name" value="<%=@member.name%>"/>
 
   <label for="premium_membership">Premium Membership:</label>
-  <input for="premium_membership" type="checkbox" name="premium_membership" value="<%=@member.premium_membership%>"/>
+  <input for="premium_membership" id="premium_membership" type="checkbox" name="premium_membership" value="true" <%= "checked" if @member.premium_membership %> />
 
   <input type="submit" value="Update Member"/>
 

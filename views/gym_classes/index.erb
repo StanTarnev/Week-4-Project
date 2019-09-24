@@ -1,0 +1,8 @@
+<% for gym_class in @gym_classes %>
+  <p> <%= gym_class.name %>   <a href='/gym_classes/<%=gym_class.id%>'><button>More Info</button></a>
+</p>
+<% end %>
+
+<a href="/gym_classes/new">
+  <button>Add Gym Class</button>
+</a>&nbsp&nbsp&nbsp
