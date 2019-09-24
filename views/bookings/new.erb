@@ -1,12 +1,5 @@
 <form action="/bookings" method="post">
-  <label>
-    Select a Gym Class:
-    <select name="gym_class_id">
-      <% for gym_class in @gym_classes %>
-      <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
-      <% end %>
-    </select>
-  </label>
+
   <label>
     Select a Gym Member:
     <select name="member_id">
@@ -16,5 +9,24 @@
     </select>
   </label>
 
+  <label>
+    Select a Gym Class:
+    <select name="gym_class_id">
+      <% for gym_class in @gym_classes %>
+      <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
+      <% end %>
+    </select>
+  </label>
+  
+  <label>
+    Select a Time Slot:
+    <select name="gym_class_id">
+      <% for gym_class in @gym_classes %>
+      <option value="<%= gym_class.id %>"><%= gym_class.time_slot %></option>
+      <% end %>
+    </select>
+  </label>
+
   <input type='submit' value="Add Booking">
+
 </form>

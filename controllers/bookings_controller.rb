@@ -9,6 +9,9 @@ get '/bookings' do
 end
 
 get '/bookings/new' do
+  @gym_classes = GymClass.all()
+  @members = Member.all()
+  # premium_booking()
   erb(:'bookings/new')
 end
 
@@ -18,17 +21,23 @@ get '/bookings/:id' do
 end
 
 post '/bookings' do
-  @booking = Booking.new(params)
-  @booking.save()
+  booking = Booking.new(params)
+  @booking_successful = false
+  if booking.can_book()
+    booking.save()
+    @booking_successful = true
+  end
   erb(:'bookings/create')
 end
 
 get '/bookings/:id/edit' do
   @booking = Booking.find(params[:id])
+  @gym_classes = GymClass.all()
+  @members = Member.all()
   erb(:'bookings/edit')
 end
 
-post 'bookings/:id' do
+post '/bookings/:id' do
   @booking = Booking.new(params)
   @booking.update()
   erb(:'bookings/update')

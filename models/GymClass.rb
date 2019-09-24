@@ -38,13 +38,9 @@ class GymClass
     return members.map {|member| Member.new(member)}
   end
 
-  # def premium_membership_check(member)
-  #   return member.membership_type == 'Premium'
-  # end
-
-  # def premium_time_slot_check()
-  #   return @time_slot == '7-8am' | @time_slot == '8-9am' | @time_slot == '5-6pm' | @time_slot == '6-7pm' | @time_slot == '8-9pm'
-  # end
+  def premium_time_slot_check()
+    return @time_slot == '7-8am' || @time_slot == '8-9am' || @time_slot == '5-6pm' || @time_slot == '6-7pm' || @time_slot == '8-9pm'
+  end
 
   # def capacity_check()
   #   return @capacity

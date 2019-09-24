@@ -44,6 +44,16 @@ class Booking
     return Member.new(member)
   end
 
+  def can_book()
+    member = Member.find(@member_id)
+    gym_class = GymClass.find(@gym_class_id)
+    if !member.premium_membership && gym_class.premium_time_slot_check
+      return false
+    else
+      return true
+    end
+  end
+
   def self.find(id)
     sql = "SELECT *
     FROM bookings

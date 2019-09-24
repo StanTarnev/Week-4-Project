@@ -1,1 +1,5 @@
-<p>A new booking has been created.</p>
+<% if @booking_successful %>
+  <p>A new booking has been created.</p>
+<% else %>
+  <p>Premium membership required for this time slot.</p>
+<% end %>
