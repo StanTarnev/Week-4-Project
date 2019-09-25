@@ -19,6 +19,9 @@ get '/members/:id' do
 end
 
 post '/members' do
+  if !params['premium_membership']
+    params['premium_membership'] = false
+  end
   @member = Member.new(params)
   @member.save()
   erb(:'members/create')

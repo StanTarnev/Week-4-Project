@@ -1,1 +1,6 @@
-<p>The booking has been updated.</p>
+
+<% if @booking_successful %>
+  <p>The booking has been updated.</p>
+<% else %>
+  <p>Premium membership required for this time slot.</p>
+<% end %>

@@ -39,7 +39,11 @@ end
 
 post '/bookings/:id' do
   @booking = Booking.new(params)
-  @booking.update()
+  @booking_successful = false
+  if @booking.can_book()
+    @booking_successful = true
+    @booking.update()
+  end
   erb(:'bookings/update')
 end
 
