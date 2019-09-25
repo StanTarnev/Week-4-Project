@@ -50,6 +50,50 @@ gym_class4.save()
 gym_class5.save()
 gym_class6.save()
 
+# gym_class7 = GymClass.new({
+#   'name' => 'Spinning',
+#   'capacity' => 4,
+#   'time_slot' => '7-8am'
+#   })
+# gym_class8 = GymClass.new({
+#   'name' => 'Boot Camp',
+#   'capacity' => 5,
+#   'time_slot' => '8-9am'
+#   })
+# gym_class9 = GymClass.new({
+#   'name' => 'Zumba',
+#   'capacity' => 6,
+#   'time_slot' => '12-1pm'
+#   })
+# gym_class10 = GymClass.new({
+#   'name' => 'Cross Fit',
+#   'capacity' => 3,
+#   'time_slot' => '1-2pm'
+#   })
+# gym_class11 = GymClass.new({
+#   'name' => 'Pilates',
+#   'capacity' => 7,
+#   'time_slot' => '2-3pm'
+#   })
+# gym_class12 = GymClass.new({
+#   'name' => 'Hatha Yoga',
+#   'capacity' => 4,
+#   'time_slot' => '3-4pm'
+#   })
+# gym_class13 = GymClass.new({
+#   'name' => 'Spinning',
+#   'capacity' => 4,
+#   'time_slot' => '4-5pm'
+#   })
+#
+# gym_class7.save()
+# gym_class8.save()
+# gym_class9.save()
+# gym_class10.save()
+# gym_class11.save()
+# gym_class12.save()
+# gym_class13.save()
+
 member1 = Member.new({
   'name' => 'Alejandra Monroe',
   'premium_membership' => false
