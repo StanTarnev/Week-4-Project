@@ -2,7 +2,7 @@
 
   <label>
     Select a Gym Member:
-    <select name="member_id">
+    <select name="member_id" required>
       <option selected disabled hidden>Choose here...</option>
       <% for member in @members %>
       <option value="<%= member.id %>"><%= member.name %></option>
@@ -12,14 +12,10 @@
 
   <label>
     Select a Gym Class:
-    <select name="gym_class_id">
+    <select name="gym_class_id" required>
       <option selected disabled hidden>Choose here...</option>
-      <% gym_class_option = {} %>
       <% for gym_class in @gym_classes %>
-        <% if gym_class != gym_class_option %>
-          <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
-          <% gym_class_option = gym_class %>
-        <% end %>
+      <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
       <% end %>
     </select>
   </label>
