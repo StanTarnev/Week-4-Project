@@ -14,8 +14,12 @@
     Select a Gym Class:
     <select name="gym_class_id">
       <option selected disabled hidden>Choose here...</option>
+      <% gym_class_option = {} %>
       <% for gym_class in @gym_classes %>
-      <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
+        <% if gym_class != gym_class_option %>
+          <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
+          <% gym_class_option = gym_class %>
+        <% end %>
       <% end %>
     </select>
   </label>
