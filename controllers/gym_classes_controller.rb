@@ -21,7 +21,7 @@ end
 post '/gym_classes' do
   @gym_class = GymClass.new(params)
   @gym_class.save()
-  erb(:'gym_classes/create')
+  redirect to('/gym_classes')
 end
 
 get '/gym_classes/:id/edit' do
