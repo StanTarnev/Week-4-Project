@@ -24,7 +24,7 @@ post '/members' do
   end
   @member = Member.new(params)
   @member.save()
-  erb(:'members/create')
+  redirect to('/members')
 end
 
 get '/members/:id/edit' do
@@ -38,7 +38,7 @@ post '/members/:id' do
   end
   @member = Member.new(params)
   @member.update()
-  erb(:'members/update')
+  redirect to('/members')
 end
 
 post '/members/:id/delete' do
