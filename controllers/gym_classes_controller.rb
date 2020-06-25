@@ -32,7 +32,8 @@ end
 post '/gym_classes/:id' do
   @gym_class = GymClass.new(params)
   @gym_class.update()
-  erb(:'gym_classes/update')
+  # erb(:'gym_classes/update')
+  redirect to('/gym_classes')
 end
 
 post '/gym_classes/:id/delete' do
