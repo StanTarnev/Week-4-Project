@@ -44,5 +44,5 @@ end
 post '/members/:id/delete' do
   @member = Member.find(params[:id])
   @member.delete()
-  erb(:'members/delete')
+  redirect to('/members')
 end

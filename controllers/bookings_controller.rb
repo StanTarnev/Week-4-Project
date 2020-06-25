@@ -50,5 +50,5 @@ end
 post '/bookings/:id/delete' do
   @booking = Booking.find(params[:id])
   @booking.delete()
-  erb(:'bookings/delete')
+  redirect to('/bookings')
 end

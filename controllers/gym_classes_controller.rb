@@ -38,5 +38,5 @@ end
 post '/gym_classes/:id/delete' do
   @gym_class = GymClass.find(params[:id])
   @gym_class.delete()
-  erb(:'gym_classes/delete')
+  redirect to('/gym_classes')
 end
