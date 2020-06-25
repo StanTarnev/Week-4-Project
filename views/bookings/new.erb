@@ -15,17 +15,7 @@
     <select name="gym_class_id" required>
       <option selected disabled hidden>Choose here...</option>
       <% for gym_class in @gym_classes %>
-      <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
-      <% end %>
-    </select>
-  </label>
-
-  <label>
-    Select a Time Slot:
-    <select name="gym_class_id">
-      <option selected disabled hidden>Choose here...</option>
-      <% for gym_class in @gym_classes %>
-      <option value="<%= gym_class.id %>"><%= gym_class.time_slot %></option>
+      <option value="<%= gym_class.id %>"><%= gym_class.name %> - <%= gym_class.time_slot %></option>
       <% end %>
     </select>
   </label>

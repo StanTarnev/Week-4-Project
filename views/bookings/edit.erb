@@ -15,16 +15,7 @@
   Select a Gym Class:
   <select name="gym_class_id">
     <% for gym_class in @gym_classes %>
-    <option value="<%= gym_class.id %>"<%= "selected" if gym_class.id == @booking.gym_class.id%>><%= gym_class.name %></option>
-    <% end %>
-  </select>
-</label>
-
-<label>
-  Select a Time Slot:
-  <select name="gym_class_id">
-    <% for gym_class in @gym_classes %>
-    <option value="<%= gym_class.id %>" <%= "selected" if gym_class.id == @booking.gym_class.id%> > <%= gym_class.time_slot %> </option>
+    <option value="<%= gym_class.id %>"<%= "selected" if gym_class.id == @booking.gym_class.id%>><%= gym_class.name %> - <%= gym_class.time_slot %></option>
     <% end %>
   </select>
 </label>
