@@ -8,7 +8,7 @@
 
 <ul>
   <% @member.gym_classes.each do |gym_class| %>
-  <li><%= gym_class.name %></li>
+  <li><a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %></a></li>
   <% end %>
 </ul>
 

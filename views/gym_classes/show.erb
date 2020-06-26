@@ -6,7 +6,7 @@
 
 <ul>
   <% @gym_class.members.each do |member| %>
-  <li><%= member.name %></li>
+  <li><a href="/members/<%= member.id %>"><%= member.name %></a></li>
   <% end %>
 </ul>
 
