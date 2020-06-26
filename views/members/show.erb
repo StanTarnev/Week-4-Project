@@ -1,6 +1,16 @@
-<p>Name: <%= @member.name%></p>
+<p><%= @member.name%></p>
 
 <p>Premium Membership: <%= @member.premium_membership %></p>
+
+<hr/>
+
+<p>Classes booked:</p>
+
+<ul>
+  <% @member.gym_classes.each do |gym_class| %>
+  <li><%= gym_class.name %></li>
+  <% end %>
+</ul>
 
 <hr/>
 

@@ -1,6 +1,14 @@
-<p>Name: <%= @gym_class.name %></p>
-<!-- <p>Capacity: <%= @gym_class.capacity %></p> -->
-<p>Time Slot: <%= @gym_class.time_slot %></p>
+<p><%= @gym_class.name %> - <%= @gym_class.time_slot %></p>
+
+<hr/>
+
+<p>Members enrolled:</p>
+
+<ul>
+  <% @gym_class.members.each do |member| %>
+  <li><%= member.name %></li>
+  <% end %>
+</ul>
 
 <hr/>
 
