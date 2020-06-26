@@ -40,3 +40,7 @@ post '/gym_classes/:id/delete' do
   @gym_class.delete()
   redirect to('/gym_classes')
 end
+
+get '/gym_classes/:d/members' do
+  erb(:'gym_classes/members')
+end
