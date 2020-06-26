@@ -22,12 +22,12 @@ end
 
 post '/bookings' do
   booking = Booking.new(params)
-  @booking_successful = false
   if booking.can_book()
     booking.save()
-    @booking_successful = true
+    redirect to('/bookings')
+  else
+    erb(:'bookings/create')
   end
-  erb(:'bookings/create')
 end
 
 get '/bookings/:id/edit' do
@@ -39,12 +39,12 @@ end
 
 post '/bookings/:id' do
   @booking = Booking.new(params)
-  @booking_successful = false
   if @booking.can_book()
-    @booking_successful = true
     @booking.update()
+    redirect to('/bookings')
+  else
+    erb(:'bookings/update')
   end
-  erb(:'bookings/update')
 end
 
 post '/bookings/:id/delete' do
