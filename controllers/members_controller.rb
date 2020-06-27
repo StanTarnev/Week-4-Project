@@ -22,9 +22,20 @@ post '/members' do
   if !params['premium_membership']
     params['premium_membership'] = false
   end
-  @member = Member.new(params)
-  @member.save()
-  redirect to('/members')
+  new_member = Member.new(params)
+  members = Member.all()
+  name_in_list = false
+  for member in members
+    if member.name == new_member.name
+      name_in_list = true
+    end
+  end
+  if name_in_list
+    erb(:'/members/create')
+  else
+    new_member.save()
+    redirect to('/members')
+  end
 end
 
 get '/members/:id/edit' do
