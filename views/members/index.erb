@@ -1,5 +1,5 @@
 <% for member in @members %>
-  <p> <%= member.name %> <a href='/members/<%=member.id%>'><button>More Info</button></a></p>
+  <p> <%= member.name %> - Premium: <%= member.premium_membership %><a href='/members/<%=member.id%>'><button>More Info</button></a></p>
 <% end %>
 
 <hr/>
