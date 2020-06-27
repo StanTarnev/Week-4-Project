@@ -47,9 +47,20 @@ post '/members/:id' do
   if !params['premium_membership']
     params['premium_membership'] = false
   end
-  @member = Member.new(params)
-  @member.update()
-  redirect to('/members')
+  updated_member = Member.new(params)
+  members = Member.all()
+  name_in_list = false
+  for member in members
+    if member.name == updated_member.name
+      name_in_list = true
+    end
+  end
+  if name_in_list
+    erb(:'/members/update')
+  else
+    updated_member.update()
+    redirect to('/members')
+  end
 end
 
 post '/members/:id/delete' do
