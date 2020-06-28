@@ -28,15 +28,14 @@ post '/bookings' do
   end
 
   bookings = Booking.all()
-  booking_already_exists = false
+  member_already_booked_for_time_slot = false
   for booking in bookings
-    if booking.member_id == new_booking.member_id && booking.gym_class_id == new_booking.gym_class_id
-      booking_already_exists = true
+    if booking.member_id == new_booking.member_id && booking.gym_class.time_slot == new_booking.gym_class.time_slot
+      member_already_booked_for_time_slot = true
     end
   end
 
-  if !booking_already_exists
-  # if premium_membership
+  if !member_already_booked_for_time_slot && premium_membership
     new_booking.save()
     redirect to('/bookings')
   else
