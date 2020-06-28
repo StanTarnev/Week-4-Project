@@ -49,13 +49,13 @@ post '/members/:id' do
   end
   updated_member = Member.new(params)
   members = Member.all()
-  name_in_list = false
+  member_in_list = false
   for member in members
-    if member.name == updated_member.name
-      name_in_list = true
+    if member.name == updated_member.name && member.premium_membership == updated_member.premium_membership
+      member_in_list = true
     end
   end
-  if name_in_list
+  if member_in_list
     erb(:'/members/update')
   else
     updated_member.update()
