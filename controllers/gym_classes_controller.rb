@@ -19,9 +19,20 @@ get '/gym_classes/:id' do
 end
 
 post '/gym_classes' do
-  @gym_class = GymClass.new(params)
-  @gym_class.save()
-  redirect to('/gym_classes')
+  new_gym_class = GymClass.new(params)
+  gym_classes = GymClass.all()
+  gym_class_already_listed = false
+  for gym_class in gym_classes
+    if gym_class.name == new_gym_class.name && gym_class.time_slot == new_gym_class.time_slot
+      gym_class_already_listed = true
+    end
+  end
+  if gym_class_already_listed
+    erb(:'/gym_classes/create')
+  else
+    new_gym_class.save()
+    redirect to('/gym_classes')
+  end
 end
 
 get '/gym_classes/:id/edit' do
@@ -30,9 +41,20 @@ get '/gym_classes/:id/edit' do
 end
 
 post '/gym_classes/:id' do
-  @gym_class = GymClass.new(params)
-  @gym_class.update()
-  redirect to('/gym_classes')
+  updated_gym_class = GymClass.new(params)
+  gym_classes = GymClass.all()
+  gym_class_already_listed = false
+  for gym_class in gym_classes
+    if gym_class.name == updated_gym_class.name && gym_class.time_slot == updated_gym_class.time_slot
+      gym_class_already_listed = true
+    end
+  end
+  if gym_class_already_listed
+    erb(:'/gym_classes/update')
+  else
+    updated_gym_class.update()
+    redirect to('/gym_classes')
+  end
 end
 
 post '/gym_classes/:id/delete' do
