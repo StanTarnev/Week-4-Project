@@ -21,9 +21,23 @@ get '/bookings/:id' do
 end
 
 post '/bookings' do
-  booking = Booking.new(params)
-  if booking.can_book()
-    booking.save()
+  new_booking = Booking.new(params)
+  premium_membership = false
+  if new_booking.can_book()
+    premium_membership = true
+  end
+
+  bookings = Booking.all()
+  booking_already_exists = false
+  for booking in bookings
+    if booking.member_id == new_booking.member_id && booking.gym_class_id == new_booking.gym_class_id
+      booking_already_exists = true
+    end
+  end
+
+  if !booking_already_exists
+  # if premium_membership
+    new_booking.save()
     redirect to('/bookings')
   else
     erb(:'bookings/create')
