@@ -1,5 +1,5 @@
 <% for gym_class in @gym_classes %>
-  <p> <%= gym_class.name %> - <%= gym_class.time_slot %>  <a href='/gym_classes/<%=gym_class.id%>'><button>More Info</button></a>
+  <p><a href='/gym_classes/<%=gym_class.id%>'> <%= gym_class.name %> - <%= gym_class.time_slot %></a>  <a href='/gym_classes/<%=gym_class.id%>'><button>More Info</button></a>
 </p>
 <% end %>
 
