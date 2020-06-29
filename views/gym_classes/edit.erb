@@ -18,8 +18,8 @@
   <option value="Barre"<%= "selected" if @gym_class.name == "Barre" %>>Barre</option>
   </select>
 
-  <!-- <label for="capacity">Capacity:</label>
-  <input for="capacity" type="number" name="capacity" value="<%=@gym_class.capacity%>"/> -->
+  <label for="capacity">Capacity:</label>
+  <input for="capacity" type="number" name="capacity" min="1" value="<%=@gym_class.capacity%>"/>
 
   <label for="time_slot_select">Select a Time Slot:</label>
   <select id="time_slot_select" name="time_slot" value="<%= @gym_class.time_slot %>">
