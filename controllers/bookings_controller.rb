@@ -40,8 +40,7 @@ post '/bookings' do
     @places_available = true
   end
 
-  if @places_available
-  # if !@member_already_booked_for_time_slot && @premium_membership
+  if @places_available && !@member_already_booked_for_time_slot && @premium_membership
     new_booking.save()
     redirect to('/bookings')
   else
