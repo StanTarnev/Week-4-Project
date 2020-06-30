@@ -8,7 +8,7 @@ class GymClass
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @capacity = options['capacity']
+    @capacity = options['capacity'].to_i
     @time_slot = options['time_slot']
   end
 
@@ -39,7 +39,7 @@ class GymClass
   end
 
   def premium_time_slot_check()
-    return @time_slot == '7-8am' || @time_slot == '8-9am' || @time_slot == '5-6pm' || @time_slot == '6-7pm' || @time_slot == '7-8pm'
+    return @time_slot == '7am-8am' || @time_slot == '8am-9am' || @time_slot == '5pm-6pm' || @time_slot == '6pm-7pm' || @time_slot == '7pm-8pm'
   end
 
   # def capacity_check()

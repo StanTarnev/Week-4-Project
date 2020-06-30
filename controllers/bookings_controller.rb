@@ -35,7 +35,13 @@ post '/bookings' do
     end
   end
 
-  if !@member_already_booked_for_time_slot && @premium_membership
+  @places_available = false
+  if new_booking.gym_class.capacity > new_booking.gym_class.members.length
+    @places_available = true
+  end
+
+  if @places_available
+  # if !@member_already_booked_for_time_slot && @premium_membership
     new_booking.save()
     redirect to('/bookings')
   else
