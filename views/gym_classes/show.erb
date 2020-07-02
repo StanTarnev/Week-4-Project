@@ -1,4 +1,4 @@
-<p><%= @gym_class.name %> - <%= @gym_class.time_slot %> - Available Places: <%=@gym_class.capacity%></p>
+<p><%= @gym_class.name %> - <%= @gym_class.time_slot %> - Available Places: <%=@gym_class.capacity - @gym_class.members.length%></p>
 
 <hr/>
 
