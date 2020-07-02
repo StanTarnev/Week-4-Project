@@ -75,7 +75,7 @@ post '/bookings/:id' do
     @places_available = true
   end
 
-  if @places_available && !@member_already_booked_for_time_slot && @premium_membership
+  if !@member_already_booked_for_time_slot && @places_available && @premium_membership
     updated_booking.update()
     redirect to('/bookings')
   else
