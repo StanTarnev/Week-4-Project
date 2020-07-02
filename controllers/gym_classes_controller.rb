@@ -41,15 +41,53 @@ get '/gym_classes/:id/edit' do
 end
 
 post '/gym_classes/:id' do
+  pre_update_gym_class = GymClass.find(params[:id])
   updated_gym_class = GymClass.new(params)
   gym_classes = GymClass.all()
-  gym_class_already_listed = false
+
+  @gym_class_already_listed = false
   for gym_class in gym_classes
     if gym_class.name == updated_gym_class.name && gym_class.time_slot == updated_gym_class.time_slot
-      gym_class_already_listed = true
+      @gym_class_already_listed = true
     end
   end
-  if gym_class_already_listed
+
+  gym_class_booked = false
+  if updated_gym_class.members.length > 0
+    gym_class_booked = true
+  end
+
+  capacity_too_low = false
+  if updated_gym_class.capacity < pre_update_gym_class.members.length
+    capacity_too_low = true
+  end
+
+  name_or_time_slot_changed = false
+  if updated_gym_class.name != pre_update_gym_class.name || updated_gym_class.time_slot != pre_update_gym_class.time_slot
+    name_or_time_slot_changed = true
+  end
+
+  update_possible = false
+  if !capacity_too_low && !name_or_time_slot_changed
+    update_possible = true
+  end
+
+  @conflicting_update = false
+  if gym_class_booked && !update_possible
+    @conflicting_update = true
+  end
+
+  @capacity_changed = false
+  if updated_gym_class.capacity != pre_update_gym_class.capacity
+    @capacity_changed = true
+  end
+
+  listed_class_can_be_edited = false
+  if @gym_class_already_listed && @capacity_changed
+    listed_class_can_be_edited = true
+  end
+
+  if !listed_class_can_be_edited || @conflicting_update
     erb(:'/gym_classes/update')
   else
     updated_gym_class.update()
