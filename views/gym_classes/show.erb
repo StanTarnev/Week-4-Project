@@ -17,4 +17,9 @@
 </a>
 <form method="post" action="/gym_classes/<%=@gym_class.id%>/delete">
   <input type="submit" value="Delete Gym Class"/>
-  </form>
+</form>
+<%if @gym_class.capacity > @gym_class.members.length%>
+  <a href="/gym_classes/<%=@gym_class.id%>/add_member">
+    <button>Add Member to Class</button>
+  </a>
+<%end%>

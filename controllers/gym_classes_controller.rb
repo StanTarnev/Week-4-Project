@@ -100,3 +100,33 @@ post '/gym_classes/:id/delete' do
   @gym_class.delete()
   redirect to('/gym_classes')
 end
+
+get '/gym_classes/:id/add_member' do
+  all_members = Member.all()
+  @current_gym_class = GymClass.find(params[:id])
+
+  members_available_for_current_gym_class_time_slot = []
+  for member in all_members
+    if member.gym_classes.length > 0
+      member.gym_classes.each do |gym_class|
+        if gym_class.time_slot != @current_gym_class.time_slot
+          members_available_for_current_gym_class_time_slot.push(member)
+        end
+      end
+    else
+      members_available_for_current_gym_class_time_slot.push(member)
+    end
+  end
+
+  members_cannot_enroll = []
+  @members_passing_requirements_for_time_slot = []
+  for member in members_available_for_current_gym_class_time_slot
+    if !member.premium_membership && @current_gym_class.premium_time_slot_check
+      members_cannot_enroll.push(member)
+    else
+      @members_passing_requirements_for_time_slot.push(member)
+    end
+  end
+
+  erb(:'gym_classes/add_member')
+end
