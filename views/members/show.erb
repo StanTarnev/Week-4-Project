@@ -1,23 +1,29 @@
-<p><%= @member.name%></p>
+<p><%= @current_member.name%></p>
 
-<p>Premium Membership: <%= @member.premium_membership %></p>
+<p>Premium Membership: <%= @current_member.premium_membership %></p>
 
 <hr/>
 
 <p>Classes booked:</p>
 
 <ul>
-  <% @member.gym_classes.each do |gym_class| %>
+  <% @current_member.gym_classes.each do |gym_class| %>
   <li><a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %> - <%= gym_class.time_slot %></a></li>
   <% end %>
 </ul>
 
 <hr/>
 
-<a href="/members/<%=@member.id%>/edit">
+<a href="/members/<%=@current_member.id%>/edit">
   <button>Edit Member</button>
 </a>
 
-<form method="post" action="/members/<%=@member.id%>/delete">
+<form method="post" action="/members/<%=@current_member.id%>/delete">
   <input type="submit" value="Delete Member"/>
-  </form>
+</form>
+
+<%if @gym_classes_not_conflicting.length > 0%>
+<a href="/members/<%=@current_member.id%>/add_gym_class">
+  <button>Enroll Member in Gym Class</button>
+</a>
+<%end%>
