@@ -1,4 +1,4 @@
-class RouteHelper
+class GymClassFilter
   def self.filter_out_conflicting_gym_classes(all_gym_classes_array, current_member_hash)
     gym_classes_with_available_places = []
     for gym_class in all_gym_classes_array

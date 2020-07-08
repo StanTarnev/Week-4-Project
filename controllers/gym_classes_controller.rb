@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/GymClass.rb' )
+require_relative( '../helpers/member_filter.rb' )
 also_reload( '../models/*' )
 require('pry')
 
@@ -14,7 +15,10 @@ get '/gym_classes/new' do
 end
 
 get '/gym_classes/:id' do
-  @gym_class = GymClass.find(params[:id])
+  all_members = Member.all()
+  @current_gym_class = GymClass.find(params[:id])
+  @members_passing_requirements_for_time_slot = MemberFilter.filter_out_conflicting_members(all_members, @current_gym_class)
+
   erb(:'gym_classes/show')
 end
 
@@ -104,29 +108,7 @@ end
 get '/gym_classes/:id/add_member' do
   all_members = Member.all()
   @current_gym_class = GymClass.find(params[:id])
-
-  members_available_for_current_gym_class_time_slot = []
-  for member in all_members
-    if member.gym_classes.length > 0
-      member.gym_classes.each do |gym_class|
-        if gym_class.time_slot != @current_gym_class.time_slot
-          members_available_for_current_gym_class_time_slot.push(member)
-        end
-      end
-    else
-      members_available_for_current_gym_class_time_slot.push(member)
-    end
-  end
-
-  members_cannot_enroll = []
-  @members_passing_requirements_for_time_slot = []
-  for member in members_available_for_current_gym_class_time_slot
-    if !member.premium_membership && @current_gym_class.premium_time_slot_check
-      members_cannot_enroll.push(member)
-    else
-      @members_passing_requirements_for_time_slot.push(member)
-    end
-  end
+  @members_passing_requirements_for_time_slot = MemberFilter.filter_out_conflicting_members(all_members, @current_gym_class)
 
   erb(:'gym_classes/add_member')
 end

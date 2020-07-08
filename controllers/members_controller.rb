@@ -1,7 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/Member.rb' )
-require_relative( '../helpers/route_helper.rb' )
+require_relative( '../helpers/gym_class_filter.rb' )
 also_reload( '../models/*' )
 require('pry')
 
@@ -17,7 +17,7 @@ end
 get '/members/:id' do
   all_gym_classes = GymClass.all()
   @current_member = Member.find(params[:id])
-  @gym_classes_not_conflicting = RouteHelper.filter_out_conflicting_gym_classes(all_gym_classes, @current_member)
+  @gym_classes_not_conflicting = GymClassFilter.filter_out_conflicting_gym_classes(all_gym_classes, @current_member)
 
   erb(:'members/show')
 end
@@ -76,7 +76,7 @@ end
 get '/members/:id/add_gym_class' do
   all_gym_classes = GymClass.all()
   @current_member = Member.find(params[:id])
-  @gym_classes_not_conflicting = RouteHelper.filter_out_conflicting_gym_classes(all_gym_classes, @current_member)
+  @gym_classes_not_conflicting = GymClassFilter.filter_out_conflicting_gym_classes(all_gym_classes, @current_member)
 
   erb(:'members/add_gym_class')
 end
