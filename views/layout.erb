@@ -7,28 +7,26 @@
 </head>
 <body>
   <header>
-    <img src="/images/PowerUp_Logo.png" alt="PowerUp Logo Text">
-    <hr/>
+    <img id="logo" src="/images/PowerUp_Logo.png" alt="PowerUp Logo Text">
     <nav>
-      <a href="/"> <button>Home </button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <a href="/gym_classes"> <button>Gym Classes</button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <a href="/members"> <button>Members</button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <a href="/"> <button>Home </button></a>
+      <a href="/gym_classes"> <button>Gym Classes</button></a>
+      <a href="/members"> <button>Members</button></a>
       <a href="/bookings"><button>Bookings</button></a>
     </nav>
   </header>
-  <hr/>
   <main>
-
-    <%= yield %>
-
+    <div id="side-menu">
+      <nav>
+        <a href="/gym_classes/new"><button>New Gym Class</button></a>
+        <a href="/members/new"><button >New Member</button></a>
+        <a href="/bookings/new"><button>New Booking</button></a>
+      </nav>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
   </main>
-  <hr/>
-  <footer>
-    <nav>
-      <a href="/gym_classes/new"><button>Start a Gym Class</button></a>
-      <a href="/members/new"><button >Add a New Member</button></a>
-      <a href="/bookings/new"><button>Book a Gym Class</button></a>
-    </nav>
-  </footer>
+
 </body>
 </html>

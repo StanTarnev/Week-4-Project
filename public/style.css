@@ -1,35 +1,39 @@
 .index-image{
   width: 65%;
-  /* align-self: center; */
-  /* align-content: center; */
-  /* align-content: space-around; */
-  /* align-items: center; */
-  /* position: absolute; */
-  /* position: relative;
-  left: 50px; */
-  /* margin: 0 auto; */
   padding-left: 17%;
-
 }
 
-/* nav {
-  display: inline;
-} */
-
-/* .button {
-background-color: #1c87c9;
-border: none;
-color: white;
-padding: 20px 34px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 20px;
-margin: 4px 2px;
-cursor: pointer;
-} */
-
-img {
+#logo {
   width: 30%;
-  left: 40%;
+}
+
+header {
+  display: flex;
+  justify-content:flex-start;
+  border-style: solid;
+}
+
+header nav{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-right: 10%;
+}
+
+main {
+  display: flex;
+}
+
+#side-menu {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  width: 10%;
+}
+
+#content {
+  border-style: solid;
+  width: 100%;
+  background-image: url("/images/Fitness-Pros-Features.jpg");
+  background-size: 100%;
 }

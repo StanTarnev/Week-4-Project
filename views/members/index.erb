@@ -1,9 +1,3 @@
 <% for member in @members %>
   <p><a href='/members/<%=member.id%>'> <%= member.name %> </a>- Premium: <%= member.premium_membership %><a href='/members/<%=member.id%>'><button>More Info</button></a></p>
 <% end %>
-
-<hr/>
-
-<a href="/members/new">
-  <button>Add Member</button>
-</a>

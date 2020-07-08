@@ -2,9 +2,3 @@
 <p><a href='/members/<%= booking.member.id %>'><%= booking.member.name %></a> - <a href='/gym_classes/<%= booking.gym_class.id %>'><%= booking.gym_class.name %> - <%= booking.gym_class.time_slot %></a> <a href='/bookings/<%=booking.id%>'><button>More Info</button></a></p>
 
 <% end %>
-
-<hr/>
-
-<a href="/bookings/new">
-  <button>Add Booking</button>
-</a>
