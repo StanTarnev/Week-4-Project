@@ -1,8 +1,8 @@
+<h2>Member Details:</h2>
+
 <p><%= @current_member.name%></p>
 
 <p>Premium Membership: <%= @current_member.premium_membership %></p>
-
-<hr/>
 
 <p>Classes booked:</p>
 
@@ -11,8 +11,6 @@
   <li><a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %> - <%= gym_class.time_slot %></a></li>
   <% end %>
 </ul>
-
-<hr/>
 
 <a href="/members/<%=@current_member.id%>/edit">
   <button>Edit Member</button>

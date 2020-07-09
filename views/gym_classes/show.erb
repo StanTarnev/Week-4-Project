@@ -1,6 +1,6 @@
-<p><%= @current_gym_class.name %> - <%= @current_gym_class.time_slot %> - Available Places: <%=@current_gym_class.capacity - @current_gym_class.members.length%></p>
+<h2>Gym Class Details:</h2>
 
-<hr/>
+<p><%= @current_gym_class.name %> - <%= @current_gym_class.time_slot %> - Available Places: <%=@current_gym_class.capacity - @current_gym_class.members.length%></p>
 
 <p>Members enrolled:</p>
 
@@ -9,8 +9,6 @@
   <li><a href="/members/<%= member.id %>"><%= member.name %></a></li>
   <% end %>
 </ul>
-
-<hr/>
 
 <a href="/gym_classes/<%=@current_gym_class.id%>/edit">
   <button>Edit Gym Class</button>
