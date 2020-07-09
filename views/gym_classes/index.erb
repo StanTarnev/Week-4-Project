@@ -1,4 +1,5 @@
 <% for gym_class in @gym_classes %>
-  <p><a href='/gym_classes/<%=gym_class.id%>'> <%= gym_class.name %> - <%= gym_class.time_slot %></a> - Available Places: <%=gym_class.capacity - gym_class.members.length%> <a href='/gym_classes/<%=gym_class.id%>'><button>More Info</button></a>
+<p>
+  <a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.name%> - <%=gym_class.time_slot%></a>
 </p>
 <% end %>
