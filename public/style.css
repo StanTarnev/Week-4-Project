@@ -23,6 +23,7 @@ header nav{
 
 main {
   display: flex;
+  height: inherit;
 }
 
 #side-menu {
@@ -45,6 +46,7 @@ main {
 
 body {
   margin: 0 0;
+  height: inherit;
 }
 
 html {

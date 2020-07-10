@@ -1,13 +1,32 @@
 <h2>Gym Bookings:</h2>
 
-<% @bookings.each do |booking| %>
-<p>
-  <a href='/members/<%= booking.member.id %>'><%= booking.member.name %></a> - <a href='/gym_classes/<%= booking.gym_class.id %>'><%= booking.gym_class.name %> - <%= booking.gym_class.time_slot %></a>
-  <a href="/bookings/<%=booking.id%>/edit">
-    <button>Edit Booking</button>
-  </a>
-  <form method="post" action="/bookings/<%=booking.id%>/delete">
-    <input type="submit" value="Delete Booking"/>
-  </form>
-</p>
-<% end %>
+<table>
+  <tr>
+    <th>Member Name</th>
+    <th></th>
+    <th>Class Name</th>
+    <th></th>
+    <th>Time Slot</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @bookings.each do |booking| %>
+  <tr>
+    <td><a href='/members/<%= booking.member.id %>'><%= booking.member.name %></a></td>
+    <td>|</td>
+    <td><a href='/gym_classes/<%= booking.gym_class.id %>'><%= booking.gym_class.name %></a></td>
+    <td>-</td>
+    <td><a href='/gym_classes/<%= booking.gym_class.id %>'><%= booking.gym_class.time_slot %></a></td>
+    <td>
+      <a href="/bookings/<%=booking.id%>/edit">
+        <button>Edit Booking</button>
+      </a>
+    </td>
+    <td>
+      <form method="post" action="/bookings/<%=booking.id%>/delete">
+        <input type="submit" value="Delete Booking"/>
+      </form>
+    </td>
+  </tr>
+  <% end %>
+</table>

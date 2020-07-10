@@ -1,7 +1,16 @@
 <h2>Gym Classes:</h2>
 
-<% for gym_class in @gym_classes %>
-<p>
-  <a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.name%> - <%=gym_class.time_slot%></a>
-</p>
-<% end %>
+<table>
+  <tr>
+    <th>Class Name</th>
+    <th></th>
+    <th>Time Slot</th>
+  </tr>
+  <% for gym_class in @gym_classes %>
+  <tr>
+    <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.name%> </a></td>
+    <td>-</td>
+    <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.time_slot%></a></td>
+  </tr>
+  <% end %>
+</table>
