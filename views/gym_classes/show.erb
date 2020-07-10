@@ -1,23 +1,28 @@
-<h2>Gym Class Details:</h2>
+<div class="details">
+  <div class="details-table">
+    <h2>Gym Class Details:</h2>
 
-<p><%= @current_gym_class.name %> - <%= @current_gym_class.time_slot %> - Available Places: <%=@current_gym_class.capacity - @current_gym_class.members.length%></p>
+    <p><%= @current_gym_class.name %> - <%= @current_gym_class.time_slot %> - Available Places: <%=@current_gym_class.capacity - @current_gym_class.members.length%></p>
 
-<p>Members enrolled:</p>
+    <p>Members enrolled:</p>
 
-<ul>
-  <% @current_gym_class.members.each do |member| %>
-  <li><a href="/members/<%= member.id %>"><%= member.name %></a></li>
-  <% end %>
-</ul>
-
-<a href="/gym_classes/<%=@current_gym_class.id%>/edit">
-  <button>Edit Gym Class</button>
-</a>
-<form method="post" action="/gym_classes/<%=@current_gym_class.id%>/delete">
-  <input type="submit" value="Delete Gym Class"/>
-</form>
-<%if @current_gym_class.capacity > @current_gym_class.members.length && @members_passing_requirements_for_time_slot.length > 0%>
-  <a href="/gym_classes/<%=@current_gym_class.id%>/add_member">
-    <button>Add Member to Class</button>
-  </a>
-<%end%>
+    <ul>
+      <% @current_gym_class.members.each do |member| %>
+      <li><a href="/members/<%= member.id %>"><%= member.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="details-buttons">
+    <a href="/gym_classes/<%=@current_gym_class.id%>/edit">
+      <button>Edit Gym Class</button>
+    </a>
+    <form method="post" action="/gym_classes/<%=@current_gym_class.id%>/delete">
+      <input type="submit" value="Delete Gym Class"/>
+    </form>
+    <%if @current_gym_class.capacity > @current_gym_class.members.length && @members_passing_requirements_for_time_slot.length > 0%>
+    <a href="/gym_classes/<%=@current_gym_class.id%>/add_member">
+      <button>Add Member to Class</button>
+    </a>
+    <%end%>
+  </div>
+</div>
