@@ -2,15 +2,30 @@
   <div class="details-table">
     <h2>Gym Class Details:</h2>
 
-    <p><%= @current_gym_class.name %> - <%= @current_gym_class.time_slot %> - Available Places: <%=@current_gym_class.capacity - @current_gym_class.members.length%></p>
-
-    <p>Members enrolled:</p>
-
-    <ul>
-      <% @current_gym_class.members.each do |member| %>
-      <li><a href="/members/<%= member.id %>"><%= member.name %></a></li>
-      <% end %>
-    </ul>
+    <table>
+      <tr>
+        <th>Class Name</th>
+        <th></th>
+        <th>Time Slot</th>
+        <th></th>
+        <th>Available Places</th>
+        <th></th>
+        <th>Members Enrolled</th>
+      </tr>
+      <tr>
+        <td><%= @current_gym_class.name %></td>
+        <td>-</td>
+        <td><%= @current_gym_class.time_slot %></td>
+        <td>|</td>
+        <td><%=@current_gym_class.capacity - @current_gym_class.members.length%></td>
+        <td>|</td>
+        <td class="details-list">
+          <% @current_gym_class.members.each do |member| %>
+          <a href="/members/<%= member.id %>"><%= member.name %></a>
+          <% end %>
+        </td>
+      </tr>
+    </table>
   </div>
   <div class="details-buttons">
     <a href="/gym_classes/<%=@current_gym_class.id%>/edit">

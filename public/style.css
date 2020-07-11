@@ -64,3 +64,8 @@ html {
 .details-buttons {
   border-style: solid;
 }
+
+.details-list {
+  display: flex;
+  flex-direction: column;
+}
