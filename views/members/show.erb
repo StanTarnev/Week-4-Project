@@ -17,7 +17,13 @@
         <td>|</td>
         <td class="details-list">
           <% @current_member.gym_classes.each do |gym_class| %>
-          <a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %> - <%= gym_class.time_slot %></a>
+          <a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %></a>
+          <% end %>
+        </td>
+        <td>-</td>
+        <td class="details-list">
+          <% @current_member.gym_classes.each do |gym_class| %>
+          <a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.time_slot %></a>
           <% end %>
         </td>
       </tr>
