@@ -70,3 +70,12 @@ html {
   display: flex;
   flex-direction: column;
 }
+
+button, input[type=submit] {
+  border: none;
+  padding: 8px 12px;
+  color: papayawhip;
+  cursor: pointer;
+  background-color: darkred;
+  font-family: 'Special Elite', cursive;
+}
