@@ -78,6 +78,7 @@ button, input[type=submit] {
   cursor: pointer;
   background-color: darkred;
   font-family: 'Special Elite', cursive;
+  text-transform: uppercase;
 }
 
 td, th {
@@ -95,4 +96,10 @@ th {
 
 table {
   border-collapse: collapse;
+}
+
+select, input[type=text], input[type=checkbox], input[type=number] {
+  width: 150px;
+  margin: 15px 0px;
+  background: papayawhip;
 }
