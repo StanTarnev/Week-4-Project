@@ -1,24 +1,27 @@
 <form action="/bookings/<%=@booking.id%>" method="post">
+  <div>
+    <label>
+      Select a Gym Member:
+      <select name="member_id">
+        <% for member in @members %>
+        <option
+        value="<%= member.id %>" <%="selected" if member.id == @booking.member.id %>><%= member.name %>
+      </option>
+      <% end %>
+    </select>
+  </label>
 
   <label>
-    Select a Gym Member:
-    <select name="member_id">
-      <% for member in @members %>
-      <option
-      value="<%= member.id %>" <%="selected" if member.id == @booking.member.id %>><%= member.name %>
-    </option>
-    <% end %>
-  </select>
-</label>
+    Select a Gym Class:
+    <select name="gym_class_id">
+      <% for gym_class in @gym_classes %>
+      <option value="<%= gym_class.id %>"<%= "selected" if gym_class.id == @booking.gym_class.id%>><%= gym_class.name %> - <%= gym_class.time_slot %></option>
+      <% end %>
+    </select>
+  </label>
+</div>
 
-<label>
-  Select a Gym Class:
-  <select name="gym_class_id">
-    <% for gym_class in @gym_classes %>
-    <option value="<%= gym_class.id %>"<%= "selected" if gym_class.id == @booking.gym_class.id%>><%= gym_class.name %> - <%= gym_class.time_slot %></option>
-    <% end %>
-  </select>
-</label>
-
-<input type='submit' value="Update Booking">
+<div>
+  <input type='submit' value="Update Booking">
+</div>
 </form>

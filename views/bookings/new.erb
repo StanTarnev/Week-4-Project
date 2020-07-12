@@ -1,25 +1,27 @@
 <form action="/bookings" method="post">
+  <div>
+    <label>
+      Select a Gym Member:
+      <select name="member_id" required>
+        <option selected disabled hidden>Choose here...</option>
+        <% for member in @members %>
+        <option value="<%= member.id %>"><%= member.name %></option>
+        <% end %>
+      </select>
+    </label>
 
-  <label>
-    Select a Gym Member:
-    <select name="member_id" required>
-      <option selected disabled hidden>Choose here...</option>
-      <% for member in @members %>
-      <option value="<%= member.id %>"><%= member.name %></option>
-      <% end %>
-    </select>
-  </label>
+    <label>
+      Select a Gym Class:
+      <select name="gym_class_id" required>
+        <option selected disabled hidden>Choose here...</option>
+        <% for gym_class in @gym_classes %>
+        <option value="<%= gym_class.id %>"><%= gym_class.name %> - <%= gym_class.time_slot %></option>
+        <% end %>
+      </select>
+    </label>
+  </div>
 
-  <label>
-    Select a Gym Class:
-    <select name="gym_class_id" required>
-      <option selected disabled hidden>Choose here...</option>
-      <% for gym_class in @gym_classes %>
-      <option value="<%= gym_class.id %>"><%= gym_class.name %> - <%= gym_class.time_slot %></option>
-      <% end %>
-    </select>
-  </label>
-
-  <input type='submit' value="Add Booking">
-
+  <div>
+    <input type='submit' value="Add Booking">
+  </div>
 </form>

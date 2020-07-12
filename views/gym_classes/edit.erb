@@ -1,6 +1,6 @@
 <form method="post" action="/gym_classes/<%=@gym_class.id%>">
 
-
+<div>
   <label for="gym_class_select">Select a Gym Class:</label>
   <select id="gym_class_select" name="name">
   <option value="Spinning"<%= "selected" if @gym_class.name == "Spinning" %>>Spinning</option>
@@ -37,7 +37,9 @@
     <option value="6pm-7pm"<%= "selected" if @gym_class.time_slot == "6pm-7pm" %>>6pm-7pm</option>
     <option value="7pm-8pm"<%= "selected" if @gym_class.time_slot == "7pm-8pm" %>>7pm-8pm</option>
   </select>
-
+</div>
+<div>
   <input type="submit" value="Update Gym Class"/>
+</div>
 
 </form>
