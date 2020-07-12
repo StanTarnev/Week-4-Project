@@ -1,9 +1,9 @@
 <form method="post" action="/members/<%=@member.id%>">
   <div>
-    <label for="name">Name:</label>
+    <label for="name"><span>Name:</span></label>
     <input id="name" type="text" name="name" value="<%=@member.name%>"/>
 
-    <label for="premium_membership">Premium Membership:</label>
+    <label for="premium_membership"><span>Premium Membership:</span></label>
     <input for="premium_membership" id="premium_membership" type="checkbox" name="premium_membership" value="true" <%= "checked" if @member.premium_membership %> />
   </div>
 

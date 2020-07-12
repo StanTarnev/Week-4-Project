@@ -1,7 +1,7 @@
 <form action="/bookings/<%=@booking.id%>" method="post">
   <div>
     <label>
-      Select a Gym Member:
+      <span>Select a Gym Member:</span>
       <select name="member_id">
         <% for member in @members %>
         <option
@@ -12,7 +12,7 @@
   </label>
 
   <label>
-    Select a Gym Class:
+    <span>Select a Gym Class:</span>
     <select name="gym_class_id">
       <% for gym_class in @gym_classes %>
       <option value="<%= gym_class.id %>"<%= "selected" if gym_class.id == @booking.gym_class.id%>><%= gym_class.name %> - <%= gym_class.time_slot %></option>

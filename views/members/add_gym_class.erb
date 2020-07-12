@@ -1,14 +1,14 @@
 <form action="/bookings" method="post">
   <div>
     <label>
-      Gym Member:
+      <span>Gym Member:</span>
       <select name="member_id">
         <option value="<%=@current_member.id%>"><%=@current_member.name%></option>
       </select>
     </label>
 
     <label>
-      Select an Available Gym Class:
+      <span>Select an Available Gym Class:</span>
       <select name="gym_class_id" required>
         <option selected disabled hidden>Choose here...</option>
         <%for gym_class in @gym_classes_not_conflicting%>

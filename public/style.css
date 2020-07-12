@@ -103,3 +103,7 @@ select, input[type=text], input[type=checkbox], input[type=number] {
   margin: 15px 0px;
   background: papayawhip;
 }
+
+span {
+  font-family: 'Special Elite', cursive;
+}

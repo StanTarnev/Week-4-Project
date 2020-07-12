@@ -1,7 +1,7 @@
 <form action="/bookings" method="post">
   <div>
     <label>
-      Select a Gym Member:
+      <span>Select a Gym Member:</span>
       <select name="member_id" required>
         <option selected disabled hidden>Choose here...</option>
         <% for member in @members %>
@@ -11,7 +11,7 @@
     </label>
 
     <label>
-      Select a Gym Class:
+      <span>Select a Gym Class:</span>
       <select name="gym_class_id" required>
         <option selected disabled hidden>Choose here...</option>
         <% for gym_class in @gym_classes %>

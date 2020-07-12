@@ -1,6 +1,6 @@
 <form method="post" action="/gym_classes">
   <div>
-    <label for="gym_class_select">Select a Gym Class:</label>
+    <label for="gym_class_select"><span>Select a Gym Class:</span></label>
     <select id="gym_class_select" name="name" required>
       <option selected disabled hidden>Choose here...</option>
       <option value="Spinning">Spinning</option>
@@ -18,10 +18,10 @@
       <option value="Barre">Barre</option>
     </select>
 
-    <label for="capacity">Capacity:</label>
+    <label for="capacity"><span>Capacity:</span></label>
     <input for="capacity" type="number" name="capacity" min="1" required/>
 
-    <label for="time_slot_select">Select a Time Slot:</label>
+    <label for="time_slot_select"><span>Select a Time Slot:</span></label>
     <select id="time_slot_select" name="time_slot" required>
       <option selected disabled hidden>Choose here...</option>
       <option value="7am-8am">7am-8am</option>
