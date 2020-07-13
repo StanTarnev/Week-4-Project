@@ -104,6 +104,6 @@ select, input[type=text], input[type=checkbox], input[type=number] {
   background: papayawhip;
 }
 
-span {
+span, th, td, h1, h3 {
   font-family: 'Special Elite', cursive;
 }

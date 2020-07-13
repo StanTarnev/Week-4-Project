@@ -1,7 +1,7 @@
 <% if !@places_available %>
-  <h4>This class is already at capacity.</h4>
+  <h3>This class is already at capacity.</h3>
 <% elsif !@premium_membership %>
-  <h4>Premium membership required for this time slot.</h4>
+  <h3>Premium membership required for this time slot.</h3>
 <% elsif @member_already_booked_for_time_slot %>
-  <h4>This time slot is already booked by the member.</h4>
+  <h3>This time slot is already booked by the member.</h3>
 <% end %>

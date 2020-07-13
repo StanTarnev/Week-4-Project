@@ -1,5 +1,5 @@
 <% if @gym_class_already_listed && !@capacity_changed%>
-  <h4>A gym class with this name and time slot already exists.</h4>
+  <h3>A gym class with this name and time slot already exists.</h3>
 <% elsif @conflicting_update %>
-  <h4>You can only modify the extra places for a gym class that is already booked</h4>
+  <h3>You can only modify the extra places for a gym class that is already booked</h3>
 <% end %>
