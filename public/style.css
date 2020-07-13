@@ -106,4 +106,13 @@ select, input[type=text], input[type=checkbox], input[type=number] {
 
 span, th, td, h1, h3 {
   font-family: 'Special Elite', cursive;
+  /* margin: 0px; */
+}
+
+h1 {
+  color: darkred;
+}
+
+a:hover {
+  color: #c6e2ff;
 }
