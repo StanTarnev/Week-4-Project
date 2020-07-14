@@ -77,8 +77,15 @@ button, input[type=submit] {
   color: papayawhip;
   cursor: pointer;
   background-color: darkred;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Century Gothic', cursive;
+  font-weight: bold;
   text-transform: uppercase;
+  border-radius: 3px;
+}
+
+span, th, td, h1, h3 {
+  font-family: 'Century Gothic', cursive;
+  /* margin: 0px; */
 }
 
 td, th {
@@ -102,11 +109,6 @@ select, input[type=text], input[type=checkbox], input[type=number] {
   width: 150px;
   margin: 15px 0px;
   background: papayawhip;
-}
-
-span, th, td, h1, h3 {
-  font-family: 'Special Elite', cursive;
-  /* margin: 0px; */
 }
 
 h1 {
