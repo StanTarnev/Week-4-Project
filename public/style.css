@@ -80,7 +80,7 @@ button, input[type=submit] {
   font-family: 'Century Gothic', cursive;
   font-weight: bold;
   text-transform: uppercase;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 span, th, td, h1, h3 {
