@@ -1,10 +1,10 @@
 class SqlHelper
     def self.get_bool(bool)
         psql_hash = {
-            't' => '✔️',
-            'f' => '❌',
-            'true' => '✔️',
-            'false' => '❌'
+            't' => true,
+            'f' => false,
+            'true' => true,
+            'false' => false
         }
 
         if !!bool == bool

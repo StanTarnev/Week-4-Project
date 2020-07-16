@@ -44,7 +44,7 @@ main {
 #content {
   border-left: 1px solid black;
   width: 100%;
-  background-image: url("/images/Fitness-Pros-Features.jpg");
+  /* background-image: url("/images/Fitness-Pros-Features.jpg"); */
   background-size: 100%;
 }
 
@@ -59,7 +59,6 @@ html {
 
 .details {
   display: flex;
-  justify-content: space-around;
 }
 
 .details-table {
