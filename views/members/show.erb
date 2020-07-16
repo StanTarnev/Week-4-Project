@@ -15,7 +15,7 @@
       <tr>
         <td><%= @current_member.name%></td>
         <td>|</td>
-        <td><%= @current_member.premium_membership %></td>
+        <td><%if @current_member.premium_membership%>✔️<%else%>❌<%end%></td>
         <td>|</td>
         <td class="details-list">
           <% @current_member.gym_classes.each do |gym_class| %>
