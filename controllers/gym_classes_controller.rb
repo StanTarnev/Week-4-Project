@@ -85,7 +85,7 @@ post '/gym_classes/:id' do
     if !@gym_class_already_listed
       update_possible = true
     else
-      if capacity_changed
+      if !@name_or_time_slot_changed && capacity_changed
         update_possible = true
       end
     end
