@@ -57,46 +57,73 @@ post '/gym_classes/:id' do
   end
 
   gym_class_booked = false
-  if updated_gym_class.members.length > 0
+  if pre_update_gym_class.members.length > 0
     gym_class_booked = true
   end
 
-  capacity_too_low = false
+  @capacity_too_low = false
   if updated_gym_class.capacity < pre_update_gym_class.members.length
-    capacity_too_low = true
+    @capacity_too_low = true
   end
 
-  name_or_time_slot_changed = false
+  @name_or_time_slot_changed = false
   if updated_gym_class.name != pre_update_gym_class.name || updated_gym_class.time_slot != pre_update_gym_class.time_slot
-    name_or_time_slot_changed = true
+    @name_or_time_slot_changed = true
+  end
+
+  capacity_changed = false
+  if updated_gym_class.capacity != pre_update_gym_class.capacity
+    capacity_changed = true
   end
 
   update_possible = false
-  if !capacity_too_low && !name_or_time_slot_changed
-    update_possible = true
-  end
-
-  @conflicting_update = false
-  if gym_class_booked && !update_possible
-    @conflicting_update = true
-  end
-
-  @capacity_changed = false
-  if updated_gym_class.capacity != pre_update_gym_class.capacity
-    @capacity_changed = true
-  end
-
-  listed_class_can_be_edited = false
-  if @gym_class_already_listed && @capacity_changed
-    listed_class_can_be_edited = true
-  end
-
-  if !listed_class_can_be_edited || @conflicting_update
-    erb(:'/gym_classes/update')
+  if gym_class_booked
+    if !@capacity_too_low && !@name_or_time_slot_changed
+      update_possible = true
+    end
   else
+    if !@gym_class_already_listed
+      update_possible = true
+    else
+      if capacity_changed
+        update_possible = true
+      end
+    end
+  end
+
+  if update_possible
     updated_gym_class.update()
     redirect to('/gym_classes')
+  else
+    erb(:'/gym_classes/update')
   end
+
+  # update_possible = false
+  # if !capacity_too_low && !name_or_time_slot_changed
+  #   update_possible = true
+  # end
+  #
+  # @conflicting_update = false
+  # if gym_class_booked && !update_possible
+  #   @conflicting_update = true
+  # end
+  #
+  # @capacity_changed = false
+  # if updated_gym_class.capacity != pre_update_gym_class.capacity
+  #   @capacity_changed = true
+  # end
+  #
+  # listed_class_can_be_edited = false
+  # if @gym_class_already_listed && @capacity_changed
+  #   listed_class_can_be_edited = true
+  # end
+  #
+  # if !listed_class_can_be_edited || @conflicting_update
+  #   erb(:'/gym_classes/update')
+  # else
+  #   updated_gym_class.update()
+  #   redirect to('/gym_classes')
+  # end
 end
 
 post '/gym_classes/:id/delete' do
