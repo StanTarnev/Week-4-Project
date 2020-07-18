@@ -86,7 +86,7 @@ button, input[type=submit] {
   border-radius: 4px;
 }
 
-span, th, td, h1, h3 {
+span, th, td, h1, h3, select, input[type=text], input[type=checkbox], input[type=number] {
   font-family: 'Century Gothic', cursive;
   /* margin: 0px; */
 }
