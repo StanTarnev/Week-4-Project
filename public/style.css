@@ -56,10 +56,10 @@ body {
 html {
   height: 100%;
 }
-
+/* 
 .details {
   display: flex;
-}
+} */
 
 .details-table {
   border-style: solid;
