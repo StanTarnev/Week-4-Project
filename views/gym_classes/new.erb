@@ -1,46 +1,47 @@
-<form method="post" action="/gym_classes">
-  <div>
-    <label for="gym_class_select"><span>Select a Gym Class:</span></label>
-    <select id="gym_class_select" name="name" required>
-      <option selected disabled hidden>Choose here...</option>
-      <option value="Spinning">Spinning</option>
-      <option value="Boot Camp">Boot Camp</option>
-      <option value="Zumba">Zumba</option>
-      <option value="Cross Fit">Cross Fit</option>
-      <option value="Pilates">Pilates</option>
-      <option value="Hatha Yoga">Hatha Yoga</option>
-      <option value="HIIT">HIIT</option>
-      <option value="Abs">Abs</option>
-      <option value="Boxing">Boxing</option>
-      <option value="Muay Thai">Muay Thai</option>
-      <option value="Rowing">Rowing</option>
-      <option value="Swim Fit">Swim Fit</option>
-      <option value="Barre">Barre</option>
-    </select>
+<div>
+  <form method="post" action="/gym_classes">
+    <div>
+      <label for="gym_class_select"><span>Select a Gym Class:</span></label>
+      <select id="gym_class_select" name="name" required>
+        <option selected disabled hidden>Choose here...</option>
+        <option value="Spinning">Spinning</option>
+        <option value="Boot Camp">Boot Camp</option>
+        <option value="Zumba">Zumba</option>
+        <option value="Cross Fit">Cross Fit</option>
+        <option value="Pilates">Pilates</option>
+        <option value="Hatha Yoga">Hatha Yoga</option>
+        <option value="HIIT">HIIT</option>
+        <option value="Abs">Abs</option>
+        <option value="Boxing">Boxing</option>
+        <option value="Muay Thai">Muay Thai</option>
+        <option value="Rowing">Rowing</option>
+        <option value="Swim Fit">Swim Fit</option>
+        <option value="Barre">Barre</option>
+      </select>
 
-    <label for="capacity"><span>Capacity:</span></label>
-    <input for="capacity" type="number" name="capacity" min="1" required/>
+      <label for="capacity"><span>Capacity:</span></label>
+      <input for="capacity" type="number" name="capacity" min="1" required/>
 
-    <label for="time_slot_select"><span>Select a Time Slot:</span></label>
-    <select id="time_slot_select" name="time_slot" required>
-      <option selected disabled hidden>Choose here...</option>
-      <option value="7am-8am">7am-8am</option>
-      <option value="8am-9am">8am-9am</option>
-      <option value="9am-10am">9am-10am</option>
-      <option value="10am-11am">10am-11am</option>
-      <option value="11am-12pm">11am-12pm</option>
-      <option value="12pm-1pm">12pm-1pm</option>
-      <option value="1pm-2pm">1pm-2pm</option>
-      <option value="2pm-3pm">2pm-3pm</option>
-      <option value="3pm-4pm">3pm-4pm</option>
-      <option value="4pm-5pm">4pm-5pm</option>
-      <option value="5pm-6pm">5pm-6pm</option>
-      <option value="6pm-7pm">6pm-7pm</option>
-      <option value="7pm-8pm">7pm-8pm</option>
-    </select>
-  </div>
-  <div>
-    <input type="submit" value="Add Class"/>
-  </div>
-
-</form>
+      <label for="time_slot_select"><span>Select a Time Slot:</span></label>
+      <select id="time_slot_select" name="time_slot" required>
+        <option selected disabled hidden>Choose here...</option>
+        <option value="7am-8am">7am-8am</option>
+        <option value="8am-9am">8am-9am</option>
+        <option value="9am-10am">9am-10am</option>
+        <option value="10am-11am">10am-11am</option>
+        <option value="11am-12pm">11am-12pm</option>
+        <option value="12pm-1pm">12pm-1pm</option>
+        <option value="1pm-2pm">1pm-2pm</option>
+        <option value="2pm-3pm">2pm-3pm</option>
+        <option value="3pm-4pm">3pm-4pm</option>
+        <option value="4pm-5pm">4pm-5pm</option>
+        <option value="5pm-6pm">5pm-6pm</option>
+        <option value="6pm-7pm">6pm-7pm</option>
+        <option value="7pm-8pm">7pm-8pm</option>
+      </select>
+    </div>
+    <div>
+      <input type="submit" value="Add Class"/>
+    </div>
+  </form>
+</div>

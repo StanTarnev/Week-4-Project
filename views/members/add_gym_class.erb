@@ -1,24 +1,26 @@
-<form action="/bookings" method="post">
-  <div>
-    <label>
-      <span>Gym Member:</span>
-      <select name="member_id">
-        <option value="<%=@current_member.id%>"><%=@current_member.name%></option>
-      </select>
-    </label>
+<div>
+  <form action="/bookings" method="post">
+    <div>
+      <label>
+        <span>Gym Member:</span>
+        <select name="member_id">
+          <option value="<%=@current_member.id%>"><%=@current_member.name%></option>
+        </select>
+      </label>
 
-    <label>
-      <span>Select an Available Gym Class:</span>
-      <select name="gym_class_id" required>
-        <option selected disabled hidden>Choose here...</option>
-        <%for gym_class in @gym_classes_not_conflicting%>
-        <option value="<%=gym_class.id%>"><%=gym_class.name%> - <%=gym_class.time_slot%></option>
-        <%end%>
-      </select>
-    </label>
-  </div>
+      <label>
+        <span>Select an Available Gym Class:</span>
+        <select name="gym_class_id" required>
+          <option selected disabled hidden>Choose here...</option>
+          <%for gym_class in @gym_classes_not_conflicting%>
+          <option value="<%=gym_class.id%>"><%=gym_class.name%> - <%=gym_class.time_slot%></option>
+          <%end%>
+        </select>
+      </label>
+    </div>
 
-  <div>
-    <input type="submit" value="Add Booking">
-  </div>
-</form>
+    <div>
+      <input type="submit" value="Add Booking">
+    </div>
+  </form>
+</div>

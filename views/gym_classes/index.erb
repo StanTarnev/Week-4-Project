@@ -1,16 +1,18 @@
-<h1>Gym Classes:</h1>
+<div>
+  <h1>Gym Classes</h1>
 
-<table>
-  <tr>
-    <th>Class Name</th>
-    <th></th>
-    <th>Time Slot</th>
-  </tr>
-  <% for gym_class in @gym_classes %>
-  <tr>
-    <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.name%> </a></td>
-    <td>-</td>
-    <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.time_slot%></a></td>
-  </tr>
-  <% end %>
-</table>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th>Time Slot</th>
+    </tr>
+    <% for gym_class in @gym_classes %>
+    <tr>
+      <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.name%> </a></td>
+      <td>-</td>
+      <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.time_slot%></a></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,13 +1,15 @@
-<form method="post" action="/members/<%=@member.id%>">
-  <div>
-    <label for="name"><span>Name:</span></label>
-    <input id="name" type="text" name="name" value="<%=@member.name%>"/>
+<div>
+  <form method="post" action="/members/<%=@member.id%>">
+    <div>
+      <label for="name"><span>Name:</span></label>
+      <input id="name" type="text" name="name" value="<%=@member.name%>"/>
 
-    <label for="premium_membership"><span>Premium Membership:</span></label>
-    <input for="premium_membership" id="premium_membership" type="checkbox" name="premium_membership" value="true" <%= "checked" if @member.premium_membership %> />
-  </div>
+      <label for="premium_membership"><span>Premium Membership:</span></label>
+      <input for="premium_membership" id="premium_membership" type="checkbox" name="premium_membership" value="true" <%= "checked" if @member.premium_membership %> />
+    </div>
 
-  <div>
-    <input type="submit" value="Update Member"/>
-  </div>
-</form>
+    <div>
+      <input type="submit" value="Update Member"/>
+    </div>
+  </form>
+</div>

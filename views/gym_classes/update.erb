@@ -1,3 +1,4 @@
+<div>
 <% if @capacity_too_low%>
   <h3>You can only modify the extra places for a gym class that is already booked</h3>
 <% elsif @gym_class_already_listed%>
@@ -5,3 +6,4 @@
 <% elsif @name_or_time_slot_changed%>
   <h3>You can only modify the extra places for a gym class that is already booked</h3>
 <% end %>
+</div>
