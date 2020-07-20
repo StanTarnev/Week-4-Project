@@ -80,7 +80,7 @@ html {
   border-style: solid;
 }
 
-.details-list {
+.details-list, #dash {
   display: flex;
   flex-direction: column;
 }
@@ -146,9 +146,4 @@ input[type=checkbox] {
 
 span {
   padding-left: 30px;
-}
-
-#dash {
-  display: flex;
-  flex-direction: column;
 }
