@@ -33,16 +33,16 @@
   </div>
   <div class="details-buttons">
     <a href="/members/<%=@current_member.id%>/edit">
-      <button>Edit Member</button>
+      <button>Edit</button>
     </a>
 
     <form method="post" action="/members/<%=@current_member.id%>/delete">
-      <input type="submit" value="Delete Member"/>
+      <input type="submit" value="Delete"/>
     </form>
 
     <%if @gym_classes_not_conflicting.length > 0%>
     <a href="/members/<%=@current_member.id%>/add_gym_class">
-      <button>Enroll Member in Class</button>
+      <button>Enroll in Class</button>
     </a>
     <%end%>
   </div>

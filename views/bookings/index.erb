@@ -20,12 +20,12 @@
       <td><a href='/gym_classes/<%= booking.gym_class.id %>'><%= booking.gym_class.time_slot %></a></td>
       <td>
         <a href="/bookings/<%=booking.id%>/edit">
-          <button>Edit Booking</button>
+          <button>Edit</button>
         </a>
       </td>
       <td>
         <form method="post" action="/bookings/<%=booking.id%>/delete">
-          <input type="submit" value="Delete Booking"/>
+          <input type="submit" value="Delete"/>
         </form>
       </td>
     </tr>
