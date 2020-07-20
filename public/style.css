@@ -7,6 +7,9 @@ header {
   display: flex;
   justify-content: flex-start;
   border-bottom: 1px solid black;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
 }
 
 header nav{
@@ -21,6 +24,8 @@ header nav{
 main {
   display: flex;
   height: inherit;
+  position: relative;
+  top: 56px;
 }
 
 #side-menu {
@@ -34,6 +39,7 @@ main {
   align-items: center;
   height: 50%;
   padding-top: 20%;
+  border-style: solid;
 }
 
 #content {
@@ -62,15 +68,16 @@ html {
 
 .details-buttons {
   position: absolute;
-  top: 55px;
-  right: 200px;
+  top: 0%;
+  right: 15%;
   width: 130px;
-  height: 350px;
+  height: 360px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding-top: 2%;
+  border-style: solid;
 }
 
 .details-list {
@@ -139,4 +146,9 @@ input[type=checkbox] {
 
 span {
   padding-left: 30px;
+}
+
+#dash {
+  display: flex;
+  flex-direction: column;
 }

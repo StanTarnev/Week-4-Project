@@ -1,4 +1,4 @@
-<div>
+<div class="details">
   <div class="details-table">
     <h1>Member Details</h1>
 
@@ -22,7 +22,11 @@
           <a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %></a>
           <% end %>
         </td>
-        <td>-</td>
+        <td>
+          <% @current_member.gym_classes.each do |gym_class| %>
+          <span id="dash">-</span>
+          <% end %>
+        </td>
         <td class="details-list">
           <% @current_member.gym_classes.each do |gym_class| %>
           <a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.time_slot %></a>
