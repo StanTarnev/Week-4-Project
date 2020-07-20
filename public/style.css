@@ -30,6 +30,8 @@ main {
 
 #side-menu {
   width: 10%;
+  height: 100%;
+  position: fixed;
 }
 
 #side-menu nav {
@@ -45,13 +47,14 @@ main {
 #content {
   border-left: 1px solid black;
   width: 100%;
-  /* background-image: url("/images/Fitness-Pros-Features.jpg"); */
+  background-image: url("/images/Fitness-Pros-Features.jpg");
   background-size: 100%;
   display: flex;
   justify-content: center;
   padding-right: 10%;
   text-align: center;
   padding-top: 40px;
+  margin-left: 10%;
 }
 
 body {
