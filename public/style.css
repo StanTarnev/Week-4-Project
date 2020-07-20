@@ -112,10 +112,9 @@ table {
   width: 100%;
 }
 
-select, input[type=text], input[type=checkbox], input[type=number] {
+select, input[type=text], input[type=number] {
   width: 150px;
   margin: 15px 0px;
-  background: papayawhip;
 }
 
 h1 {
@@ -128,4 +127,14 @@ a:hover {
 
 #side-menu nav button {
   width: 100px;
+}
+
+input[type=checkbox] {
+  width: 20px;
+  margin: 15px 0px;
+  transform: scale(1.4);
+}
+
+span {
+  padding-left: 30px;
 }

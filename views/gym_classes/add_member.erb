@@ -2,7 +2,7 @@
   <form action="/bookings" method="post">
     <div>
       <label>
-        <span>Select a Gym Member Available for This Time Slot:</span>
+        <span>Member Available for This Time Slot:</span>
         <select name="member_id" required>
           <option selected disabled hidden>Choose here...</option>
           <%for member in @members_passing_requirements_for_time_slot%>
