@@ -6,7 +6,7 @@
 header {
   display: flex;
   justify-content: flex-start;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid papayawhip;
   position: fixed;
   z-index: 1;
   background-color: white;
@@ -32,6 +32,8 @@ main {
   width: 10%;
   height: 100%;
   position: fixed;
+  border-right: 1px solid papayawhip;
+
 }
 
 #side-menu nav {
@@ -41,11 +43,9 @@ main {
   align-items: center;
   height: 50%;
   padding-top: 20%;
-  border-style: solid;
 }
 
 #content {
-  border-left: 1px solid black;
   width: 100%;
   background-image: url("/images/Fitness-Pros-Features.jpg");
   background-size: 100%;
@@ -80,7 +80,6 @@ html {
   justify-content: space-around;
   align-items: center;
   padding-top: 2%;
-  border-style: solid;
 }
 
 .details-list, #dash {
@@ -131,6 +130,7 @@ select, input[type=text], input[type=number] {
 h1 {
   color: darkred;
   margin-top: 0px;
+  margin-bottom: 30px;
 }
 
 a:hover {
