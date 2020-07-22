@@ -58,7 +58,7 @@ main {
 
 #content div {
   background-color: white;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 #background-image {
@@ -164,4 +164,8 @@ input[type=checkbox] {
 
 span {
   padding-left: 15px;
+}
+
+form {
+  padding-right: 15px;
 }
