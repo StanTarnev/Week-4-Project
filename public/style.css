@@ -56,6 +56,11 @@ main {
   margin-left: 10%;
 }
 
+#content div {
+  background-color: white;
+  border-radius: 4px;
+}
+
 #background-image {
   width: 90%;
   height: 100%;
@@ -158,5 +163,5 @@ input[type=checkbox] {
 }
 
 span {
-  padding-left: 30px;
+  padding-left: 15px;
 }
