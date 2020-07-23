@@ -55,17 +55,23 @@ main {
 }
 
 #content div {
-  background-color: white;
-  border-radius: 8px;
+  /* background-color: white;
+  border-radius: 8px; */
   margin-bottom: 20px;
 }
 
-.form-message, .details, .index, #welcome {
+.form-message, .details-table, .index, #welcome {
   border: 1px solid black;
+  background-color: white;
+  border-radius: 8px;
 }
 
-.form-message, .details {
+.form-message {
   padding: 10px 10px 0px 10px;
+}
+
+.details-table {
+  padding: 10px 10px 20px 10px;
 }
 
 #welcome {
@@ -96,9 +102,6 @@ body {
 
 html {
   height: 100%;
-}
-
-.details-table {
 }
 
 .details-buttons {
