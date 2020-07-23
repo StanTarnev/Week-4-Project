@@ -16,7 +16,11 @@
         <td><%= @current_member.name%></td>
         <td>|</td>
         <td><%if @current_member.premium_membership%>✔️<%else%>❌<%end%></td>
-        <td>|</td>
+        <td>
+          <% @current_member.gym_classes.each do |gym_class| %>
+          <span class="vertical-bar">|</span>
+          <% end %>
+        </td>
         <td class="details-list">
           <% @current_member.gym_classes.each do |gym_class| %>
           <a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %></a>

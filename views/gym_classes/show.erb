@@ -18,7 +18,11 @@
         <td><%= @current_gym_class.time_slot %></td>
         <td>|</td>
         <td><%=@current_gym_class.capacity - @current_gym_class.members.length%></td>
-        <td>|</td>
+        <td>
+          <% @current_gym_class.members.each do |member| %>
+          <span class="vertical-bar">|</span>
+          <% end %>
+        </td>
         <td class="details-list">
           <% @current_gym_class.members.each do |member| %>
           <a href="/members/<%= member.id %>"><%= member.name %></a>

@@ -118,7 +118,7 @@ html {
   margin-left: 8%;
 }
 
-.details-list, #dash {
+.details-list, #dash, .vertical-bar {
   display: flex;
   flex-direction: column;
 }
