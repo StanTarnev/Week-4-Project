@@ -114,6 +114,10 @@ html {
   padding-top: 2%;
 }
 
+.details-buttons input {
+  margin-left: 8%;
+}
+
 .details-list, #dash {
   display: flex;
   flex-direction: column;
