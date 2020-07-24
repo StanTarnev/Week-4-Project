@@ -18,7 +18,6 @@ header nav{
   align-items: center;
   width: 100%;
   padding-right: 10%;
-  /* background-color: silver; */
 }
 
 main {
@@ -145,7 +144,7 @@ button, input[type=submit] {
 
 button:hover, input[type=submit]:hover {
   color: brown;
-  background-color: #c6e2ff;
+  background-color: #D0CA9C;
 }
 
 span, th, td, h1, h3, select, input[type=text], input[type=checkbox], input[type=number] {
@@ -183,7 +182,7 @@ h1 {
 }
 
 a:hover {
-  color: #c6e2ff;
+  color: #D0CA9C;
 }
 
 #side-menu nav button, .details-buttons button, .details-buttons input[type=submit] {

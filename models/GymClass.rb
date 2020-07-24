@@ -42,10 +42,6 @@ class GymClass
     return @time_slot == '7am-8am' || @time_slot == '8am-9am' || @time_slot == '5pm-6pm' || @time_slot == '6pm-7pm' || @time_slot == '7pm-8pm'
   end
 
-  # def capacity_check()
-  #   return @capacity
-  # end
-
   def self.all()
     sql = "SELECT * FROM gym_classes"
     gym_classes = SqlRunner.run(sql)

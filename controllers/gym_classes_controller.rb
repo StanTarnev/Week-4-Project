@@ -97,33 +97,6 @@ post '/gym_classes/:id' do
   else
     erb(:'/gym_classes/update')
   end
-
-  # update_possible = false
-  # if !capacity_too_low && !name_or_time_slot_changed
-  #   update_possible = true
-  # end
-  #
-  # @conflicting_update = false
-  # if gym_class_booked && !update_possible
-  #   @conflicting_update = true
-  # end
-  #
-  # @capacity_changed = false
-  # if updated_gym_class.capacity != pre_update_gym_class.capacity
-  #   @capacity_changed = true
-  # end
-  #
-  # listed_class_can_be_edited = false
-  # if @gym_class_already_listed && @capacity_changed
-  #   listed_class_can_be_edited = true
-  # end
-  #
-  # if !listed_class_can_be_edited || @conflicting_update
-  #   erb(:'/gym_classes/update')
-  # else
-  #   updated_gym_class.update()
-  #   redirect to('/gym_classes')
-  # end
 end
 
 post '/gym_classes/:id/delete' do
