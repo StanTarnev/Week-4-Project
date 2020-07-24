@@ -115,13 +115,20 @@ html {
   padding-top: 2%;
 }
 
-.details-buttons input {
-  margin-left: 8%;
-}
-
 .details-list, #dash, .vertical-bar {
   display: flex;
   flex-direction: column;
+}
+
+.details-buttons div {
+  background-color: white;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.details-buttons form {
+  padding: 0px;
 }
 
 button, input[type=submit] {

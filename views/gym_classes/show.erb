@@ -32,16 +32,22 @@
     </table>
   </div>
   <div class="details-buttons">
-    <a href="/gym_classes/<%=@current_gym_class.id%>/edit">
-      <button>Edit</button>
-    </a>
-    <form method="post" action="/gym_classes/<%=@current_gym_class.id%>/delete">
-      <input type="submit" value="Delete"/>
-    </form>
+    <div>
+      <a href="/gym_classes/<%=@current_gym_class.id%>/edit">
+        <button>Edit</button>
+      </a>
+    </div>
+    <div>
+      <form method="post" action="/gym_classes/<%=@current_gym_class.id%>/delete">
+        <input type="submit" value="Delete"/>
+      </form>
+    </div>
     <%if @current_gym_class.capacity > @current_gym_class.members.length && @members_passing_requirements_for_time_slot.length > 0%>
-    <a href="/gym_classes/<%=@current_gym_class.id%>/add_member">
-      <button>Enroll Member</button>
-    </a>
+    <div>
+      <a href="/gym_classes/<%=@current_gym_class.id%>/add_member">
+        <button>Enroll Member</button>
+      </a>
+    </div>
     <%end%>
   </div>
 </div>
