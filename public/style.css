@@ -41,7 +41,7 @@ main {
   justify-content: space-around;
   align-items: center;
   height: 50%;
-  padding-top: 20%;
+  padding-top: 15%;
 }
 
 #content {
@@ -50,7 +50,7 @@ main {
   justify-content: center;
   padding-right: 10%;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 55px;
   margin-left: 10%;
 }
 
@@ -105,7 +105,7 @@ html {
 .details-buttons {
   position: absolute;
   top: 0%;
-  right: 15%;
+  right: 13.4%;
   width: 130px;
   height: 360px;
   display: flex;
