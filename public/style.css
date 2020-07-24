@@ -136,7 +136,7 @@ button, input[type=submit] {
   padding: 6px 10px 7px 10px;
   color: papayawhip;
   cursor: pointer;
-  background-color: darkred;
+  background-color: brown;
   font-family: 'Century Gothic', cursive;
   font-weight: bold;
   text-transform: uppercase;
@@ -144,8 +144,8 @@ button, input[type=submit] {
 }
 
 button:hover, input[type=submit]:hover {
-  color: darkred;
-  background-color: papayawhip;
+  color: brown;
+  background-color: #c6e2ff;
 }
 
 span, th, td, h1, h3, select, input[type=text], input[type=checkbox], input[type=number] {
@@ -176,7 +176,7 @@ select, input[type=text], input[type=number] {
 }
 
 h1 {
-  color: darkred;
+  color: brown;
   margin-top: 0px;
   padding: 0px 10px 0px 10px;
 }
