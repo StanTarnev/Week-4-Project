@@ -3,7 +3,6 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/Member.rb' )
 require_relative( '../helpers/gym_class_filter.rb' )
 also_reload( '../models/*' )
-require('pry')
 
 get '/members' do
   @members = Member.all()
