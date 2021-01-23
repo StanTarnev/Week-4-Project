@@ -4,7 +4,7 @@ This project was my end-of-module assignment when I was finishing the Ruby secti
 
 ## Prerequisites
 
-* [Ruby](https://www.ruby-lang.org/en/downloads/), including Ruby gems: PG, Sinatra (plus extension 'sinatra/contrib/all')
+* [Ruby](https://www.ruby-lang.org/en/downloads/), including Ruby gems: PG, Sinatra, Sinatra-contrib.
 * [PostgreSQL](https://www.postgresql.org/download/)
 
 ## How To Run
