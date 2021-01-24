@@ -39,7 +39,7 @@ class GymClass
   end
 
   def premium_time_slot_check()
-    return @time_slot == '7am-8am' || @time_slot == '8am-9am' || @time_slot == '5pm-6pm' || @time_slot == '6pm-7pm' || @time_slot == '7pm-8pm'
+    return @time_slot == '07:00-08:00' || @time_slot == '08:00-09:00' || @time_slot == '17:00-18:00' || @time_slot == '18:00-19:00' || @time_slot == '19:00-20:00'
   end
 
   def self.all()

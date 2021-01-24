@@ -5,7 +5,7 @@ require_relative( '../helpers/member_filter.rb' )
 also_reload( '../models/*' )
 
 get '/gym_classes' do
-  @gym_classes = GymClass.all()
+  @gym_classes = GymClass.all().sort_by(&:time_slot)
   erb(:'gym_classes/index')
 end
 
