@@ -5,7 +5,7 @@ require_relative( '../helpers/gym_class_filter.rb' )
 also_reload( '../models/*' )
 
 get '/members' do
-  @members = Member.all()
+  @members = Member.all().sort_by(&:name)
   erb(:'members/index')
 end
 

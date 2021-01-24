@@ -48,7 +48,7 @@ class Member
   end
 
   def self.all()
-    sql = "SELECT * FROM members ORDER BY name"
+    sql = "SELECT * FROM members"
     members = SqlRunner.run(sql)
     return members.map {|member| Member.new(member)}
   end
