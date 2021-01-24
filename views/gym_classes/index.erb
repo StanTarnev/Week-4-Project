@@ -6,12 +6,16 @@
       <th>Name</th>
       <th></th>
       <th>Time Slot</th>
+      <th></th>
+      <th>Available Places</th>
     </tr>
     <% for gym_class in @gym_classes %>
     <tr>
       <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.name%> </a></td>
       <td>-</td>
       <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.time_slot%></a></td>
+      <td>|</td>
+      <td><%=gym_class.capacity - gym_class.members.length%></td>
     </tr>
     <% end %>
   </table>
