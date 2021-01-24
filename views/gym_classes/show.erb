@@ -24,7 +24,7 @@
           <% end %>
         </td>
         <td class="details-list">
-          <% @current_gym_class.members.each do |member| %>
+          <% @current_gym_class.members.sort_by(&:name).each do |member| %>
           <a href="/members/<%= member.id %>"><%= member.name %></a>
           <% end %>
         </td>
