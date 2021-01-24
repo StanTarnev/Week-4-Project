@@ -40,18 +40,18 @@
     </table>
   </div>
   <div class="details-buttons">
-    <div>
+    <div class="details-button">
       <a href="/members/<%=@current_member.id%>/edit">
         <button>Edit</button>
       </a>
     </div>
-    <div>
+    <div class="details-button">
       <form method="post" action="/members/<%=@current_member.id%>/delete">
         <input type="submit" value="Delete"/>
       </form>
     </div>
     <%if @gym_classes_not_conflicting.length > 0%>
-    <div>
+    <div class="details-button">
       <a href="/members/<%=@current_member.id%>/add_gym_class">
         <button>Enroll in Class</button>
       </a>
