@@ -4,10 +4,14 @@
   <table>
     <tr>
       <th>Name</th>
+      <th></th>
+      <th>Premium Membership</th>
     </tr>
     <% for member in @members %>
     <tr>
       <td><a href='/members/<%=member.id%>'> <%= member.name %> </a></td>
+      <td>|</td>
+      <td><%if member.premium_membership%>✔️<%else%>❌<%end%></td>
     </tr>
     <% end %>
   </table>
