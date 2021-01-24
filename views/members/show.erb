@@ -22,7 +22,7 @@
           <% end %>
         </td>
         <td class="details-list">
-          <% @current_member.gym_classes.each do |gym_class| %>
+          <% @current_member.gym_classes.sort_by(&:time_slot).each do |gym_class| %>
           <a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %></a>
           <% end %>
         </td>
@@ -32,7 +32,7 @@
           <% end %>
         </td>
         <td class="details-list">
-          <% @current_member.gym_classes.each do |gym_class| %>
+          <% @current_member.gym_classes.sort_by(&:time_slot).each do |gym_class| %>
           <a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.time_slot %></a>
           <% end %>
         </td>
