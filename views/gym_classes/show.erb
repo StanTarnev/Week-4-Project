@@ -37,11 +37,13 @@
         <button>Edit</button>
       </a>
     </div>
+    <% if @current_gym_class.members.length < 1 %>
     <div class="details-button">
       <form method="post" action="/gym_classes/<%=@current_gym_class.id%>/delete">
         <input type="submit" value="Delete"/>
       </form>
     </div>
+    <% end %>
     <%if @current_gym_class.capacity > @current_gym_class.members.length && @members_passing_requirements_for_time_slot.length > 0%>
     <div class="details-button">
       <a href="/gym_classes/<%=@current_gym_class.id%>/add_member">
