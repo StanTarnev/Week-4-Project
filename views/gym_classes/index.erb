@@ -3,9 +3,9 @@
 
   <table>
     <tr>
-      <th>Name</th>
-      <th></th>
       <th>Time Slot</th>
+      <th></th>
+      <th>Name</th>
       <th></th>
       <th>Places Booked</th>
       <th></th>
@@ -15,9 +15,9 @@
     </tr>
     <% for gym_class in @gym_classes %>
     <tr>
-      <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.name%> </a></td>
+      <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.time_slot%> </a></td>
       <td>-</td>
-      <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.time_slot%></a></td>
+      <td><a href='/gym_classes/<%=gym_class.id%>'> <%=gym_class.name%></a></td>
       <td>|</td>
       <td><%=gym_class.members.length%></td>
       <td>|</td>
