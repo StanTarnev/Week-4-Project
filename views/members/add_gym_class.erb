@@ -12,8 +12,8 @@
         <span>Available Gym Class:</span>
         <select name="gym_class_id" required>
           <option selected disabled hidden>Choose here...</option>
-          <%for gym_class in @gym_classes_not_conflicting%>
-          <option value="<%=gym_class.id%>"><%=gym_class.name%> - <%=gym_class.time_slot%></option>
+          <% @gym_classes_not_conflicting.sort_by(&:time_slot).each do |gym_class| %>
+          <option value="<%=gym_class.id%>"><%=gym_class.time_slot%> - <%=gym_class.name%></option>
           <%end%>
         </select>
       </label>
