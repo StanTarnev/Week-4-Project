@@ -5,7 +5,7 @@
         <span>Member Available for This Time Slot:</span>
         <select name="member_id" required>
           <option selected disabled hidden>Choose here...</option>
-          <%for member in @members_passing_requirements_for_time_slot%>
+          <% @members_passing_requirements_for_time_slot.sort_by(&:name).each do |member| %>
           <option value="<%=member.id%>"><%=member.name%></option>
           <%end%>
         </select>
