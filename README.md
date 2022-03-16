@@ -4,10 +4,16 @@ This project was my end-of-module assignment when I was finishing the Ruby secti
 
 ## Prerequisites
 
-* [Ruby](https://www.ruby-lang.org/en/downloads/), including Ruby gems: PG, Sinatra, Sinatra-contrib.
+* [Ruby](https://www.ruby-lang.org/en/downloads/)
 * [PostgreSQL](https://www.postgresql.org/download/)
 
 ## How To Run
+
+* Install the required Ruby gems:
+
+```
+$ bundle install
+```
 
 * Start the PostgreSQL service:
 
