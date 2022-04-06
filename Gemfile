@@ -2,15 +2,10 @@
 
 source "https://rubygems.org"
 
-# ruby "3.1.1"
-
 # gem "rails"
 
-gem "thin"
-gem "puma"
-gem "reel"
-gem "http"
-gem "webrick"
-gem "pg"
-gem "sinatra"
-gem "sinatra-contrib"
+gem "pg", "~> 1.3"
+
+gem "sinatra", "~> 2.2"
+
+gem "sinatra-contrib", "~> 2.2"
