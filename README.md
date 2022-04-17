@@ -18,11 +18,11 @@ $ bundle install
 * Ensure the PostgreSQL service is running:
 
 ```
-~> Restart-Service postgresql-x64-<PostgreSql version> (On Windows (PowerShell))
+~> Restart-Service postgresql-x64-<PostgreSql version>     (On Windows (PowerShell))
 ```
 
 ```
-$ sudo service postgresql restart (On Unix systems)
+$ sudo service postgresql restart    (On Unix systems)
 ```
 
 * Create the gym database:
