@@ -17,13 +17,13 @@ $ bundle install
 
 * Ensure the PostgreSQL service is running:
 
-On Windows (PowerShell):
+  On Windows (PowerShell):
 
 ```
 ~> Restart-Service postgresql-x64-<PostgreSql version>
 ```
 
-On Unix systems:
+  On Unix systems:
 
 ```
 $ sudo service postgresql restart
