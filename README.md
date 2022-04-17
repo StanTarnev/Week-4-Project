@@ -15,10 +15,18 @@ This project was my end-of-module assignment when I was finishing the Ruby secti
 $ bundle install
 ```
 
-* Start the PostgreSQL service:
+* Ensure the PostgreSQL service is running:
+
+On Windows (PowerShell):
 
 ```
-$ sudo service postgresql start
+~> Restart-Service postgresql-x64-<PostgreSql version>
+```
+
+On Unix systems:
+
+```
+$ sudo service postgresql restart
 ```
 
 * Create the gym database:
